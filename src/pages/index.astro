@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Página de inicio";
+
+const {pageTitle} = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>Mi impresionante subtítulo del blog</h2>
 </BaseLayout>
