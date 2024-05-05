@@ -15,18 +15,20 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
       <a href="#" class="font-medium">Logo</a>
     </div>
     <div class="hidden sm:flex absolute inset-0 justify-center space-x-5">
-      <a
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
-        >Button 1</a
-      >
-      <a
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
-        >Button 2</a
-      >
-      <a
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
-        >Button 3</a
-      >
+      {
+        [
+          ["Button 1", "#"],
+          ["Button 2", "#"],
+          ["Button 3", "#"],
+        ].map(([title, url]) => (
+          <a
+            href={url}
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+          >
+            {title}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
@@ -34,18 +36,20 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
   id="mobile-menu"
   class="bg-blue-950 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden hidden"
 >
-  <a
-    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
-    >Button 1</a
-  >
-  <a
-    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
-    >Button 2</a
-  >
-  <a
-    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
-    >Button 3</a
-  >
+  {
+    [
+      ["Button 1", "#"],
+      ["Button 2", "#"],
+      ["Button 3", "#"],
+    ].map(([title, url]) => (
+      <a
+        href={url}
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
+      >
+        {title}
+      </a>
+    ))
+  }
 </div>
 
 <script>
