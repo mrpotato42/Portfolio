@@ -2,7 +2,7 @@
 import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 ---
 
-<nav class="bg-blue-900 h-10">
+<nav class="fixed bg-blue-900 h-10 top-0 w-screen">
   <div
     class="relative flex max-h-screen px-6 items-center justify-between space-y-2 space-x-0"
   >
@@ -34,7 +34,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 </nav>
 <div
   id="mobile-menu"
-  class="bg-blue-950 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden hidden"
+  class="bg-blue-700 my-12 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden hidden"
 >
   {
     [

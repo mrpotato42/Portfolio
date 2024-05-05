@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import MainLayout from "./MainLayout.astro";
 
@@ -16,12 +17,12 @@ const { pageTitle } = Astro.props;
 
   <body class="bg-slate-200">
     <!-- <Navigation /> -->
-    <Navbar />
     <main>
+      <Navbar />
       <MainLayout />
       <slot />
       <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
-      <!-- <Footer /> -->
     </main>
+    <Footer />
   </body>
 </html>
