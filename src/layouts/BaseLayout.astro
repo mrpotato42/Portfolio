@@ -19,7 +19,9 @@ const { pageTitle } = Astro.props;
     <!-- <Navigation /> -->
     <main>
       <Navbar />
-      <MainLayout />
+      <div class="flex flex-col">
+        <MainLayout />
+      </div>
       <slot />
       <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
     </main>
