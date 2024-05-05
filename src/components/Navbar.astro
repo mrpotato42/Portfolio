@@ -1,0 +1,25 @@
+---
+import HamburgerIcon from "./Icons/Hamburger.icon.astro";
+---
+
+<nav class="bg-blue-900 h-10">
+  <div class="relative w-5 px-6 py-2">
+    <div class="absolute">
+      <div class="bg-blue-800 items-center" id="block-1">
+        <div class="sm:hidden hover:bg-blue-700">
+          <button><HamburgerIcon /></button>
+        </div>
+        <div class="sm:order-first">
+          <a href="#" class="">Logo</a>
+        </div>
+      </div>
+      <div class="sm:absolute bg-blue-700" id="block-2">
+        <div class="sm:inline-block space-x-2">
+          <button class="hover:bg-slate-500">Button 1</button>
+          <button class="hover:bg-slate-500">Button 2</button>
+          <button class="hover:bg-slate-500">Button 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

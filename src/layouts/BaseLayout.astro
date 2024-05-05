@@ -1,10 +1,12 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Navigation from '../components/Navigation.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import Navbar from "../components/Navbar.astro";
 
-const {pageTitle} = Astro.props;
+const { pageTitle } = Astro.props;
 ---
+
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -17,13 +19,15 @@ const {pageTitle} = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  
-  <body>
-    <Navigation />
+
+  <body class="bg-slate-200">
+    <!-- <Navigation /> -->
+    <Navbar />
     <main>
       <Header />
-      <slot /> <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
-      <Footer />
+      <slot />
+      <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
+      <!-- <Footer /> -->
     </main>
 
     <script>
