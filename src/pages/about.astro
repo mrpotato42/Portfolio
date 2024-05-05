@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+
 import Footer from "../components/Footer.astro";
 
 const pageTitle = "Sobre mi xddd";
@@ -33,9 +33,6 @@ const skillColor = "navy";
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
 
-    <script>
-      import "../scripts/menu.js";
-    </script>
 
     <style define:vars={{ skillColor }}>
       h1 {
@@ -49,7 +46,6 @@ const skillColor = "navy";
     </style>
   </head>
   <body>
-    <Header />
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 
