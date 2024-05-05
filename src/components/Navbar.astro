@@ -9,7 +9,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
     <div
       class="relative inline-flex items-center justify-center top-1 sm:hidden hover:bg-blue-700"
     >
-      <button class=""><HamburgerIcon /></button>
+      <button id="menu-button"><HamburgerIcon /></button>
     </div>
     <div>
       <a href="#" class="font-medium">Logo</a>
@@ -30,7 +30,10 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
     </div>
   </div>
 </nav>
-<div class="bg-blue-950 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden">
+<div
+  id="mobile-menu"
+  class="bg-blue-950 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden"
+>
   <a
     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
     >Button 1</a
@@ -44,3 +47,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
     >Button 3</a
   >
 </div>
+
+<script>
+  import "../scripts/navigation.js";
+</script>
