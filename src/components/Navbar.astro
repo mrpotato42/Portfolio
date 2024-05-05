@@ -3,23 +3,44 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 ---
 
 <nav class="bg-blue-900 h-10">
-  <div class="relative w-5 px-6 py-2">
-    <div class="absolute">
-      <div class="bg-blue-800 items-center" id="block-1">
-        <div class="sm:hidden hover:bg-blue-700">
-          <button><HamburgerIcon /></button>
-        </div>
-        <div class="sm:order-first">
-          <a href="#" class="">Logo</a>
-        </div>
-      </div>
-      <div class="sm:absolute bg-blue-700" id="block-2">
-        <div class="sm:inline-block space-x-2">
-          <button class="hover:bg-slate-500">Button 1</button>
-          <button class="hover:bg-slate-500">Button 2</button>
-          <button class="hover:bg-slate-500">Button 3</button>
-        </div>
-      </div>
+  <div
+    class="relative flex max-h-screen px-6 items-center justify-between space-y-2 space-x-0"
+  >
+    <div
+      class="relative inline-flex items-center justify-center top-1 sm:hidden hover:bg-blue-700"
+    >
+      <button class=""><HamburgerIcon /></button>
+    </div>
+    <div>
+      <a href="#" class="font-medium">Logo</a>
+    </div>
+    <div class="hidden sm:flex absolute inset-0 justify-center space-x-5">
+      <a
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+        >Button 1</a
+      >
+      <a
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+        >Button 2</a
+      >
+      <a
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+        >Button 3</a
+      >
     </div>
   </div>
 </nav>
+<div class="bg-blue-950 space-y-3 px-2 pb-3 pt-2 rounded-b-md sm:hidden">
+  <a
+    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
+    >Button 1</a
+  >
+  <a
+    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
+    >Button 2</a
+  >
+  <a
+    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
+    >Button 3</a
+  >
+</div>
