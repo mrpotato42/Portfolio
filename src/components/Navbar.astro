@@ -11,9 +11,13 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
         <a href="#" class="font-medium">Logo</a>
       </div>
       <div
-        class="relative inline-flex items-center justify-center sm:hidden hover:bg-blue-700 mx-8"
+        class="relative inline-flex items-center justify-center sm:hidden shadow-lg hover:to-transparent hover:bg-gradient-to-t rounded-md mx-8"
       >
-        <button id="menu-button"><HamburgerIcon /></button>
+        <button
+          id="menu-button"
+          class="text-slate-100 hover:shadow hover:rounded-md"
+          ><HamburgerIcon /></button
+        >
       </div>
       <!-- menu on desktop -->
       <div class="hidden sm:flex absolute inset-0 justify-center items-center">
