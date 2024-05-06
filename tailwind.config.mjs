@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         "custom-img":
-          'linear-gradient(to top, #6366f1 85%, transparent), url("/images/wisky2.webp")',
+          'linear-gradient(to top, #6366f1 90%, transparent), url("/images/wisky2.webp")',
       },
     },
   },
