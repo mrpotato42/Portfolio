@@ -15,7 +15,8 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
       <div class="mx-10">
         <a href="#" class="font-medium">Logo</a>
       </div>
-      <div class="hidden sm:flex absolute inset-0 justify-center">
+      <!-- menu on desktop -->
+      <div class="hidden sm:flex absolute inset-0 justify-center items-center">
         {
           [
             ["Button 1", "#"],
@@ -24,7 +25,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
           ].map(([title, url]) => (
             <a
               href={url}
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 text-base font-medium text-center"
             >
               {title}
             </a>
