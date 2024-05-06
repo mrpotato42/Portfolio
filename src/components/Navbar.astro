@@ -2,51 +2,52 @@
 import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 ---
 
-<nav class="fixed bg-blue-900 h-20 top-0 w-screen">
-  <div
-    class="relative flex max-h-screen px-6 items-center justify-between top-4 space-y-2"
+<header class="sticky top-0 z-20">
+  <nav
+    class="flex mx-5 bg-gradient-to-r from-indigo-500 h-10 mt-6 items-center content-center rounded"
   >
-    <div
-      class="relative inline-flex items-center justify-center top-1 sm:hidden hover:bg-blue-700 mx-8"
-    >
-      <button id="menu-button"><HamburgerIcon /></button>
+    <div class="flex w-screen justify-between mx-6">
+      <div
+        class="relative inline-flex items-center justify-center sm:hidden hover:bg-blue-700 mx-8"
+      >
+        <button id="menu-button"><HamburgerIcon /></button>
+      </div>
+      <div class="mx-10">
+        <a href="#" class="font-medium">Logo</a>
+      </div>
+      <div class="hidden sm:flex absolute inset-0 justify-center">
+        {
+          [
+            ["Button 1", "#"],
+            ["Button 2", "#"],
+            ["Button 3", "#"],
+          ].map(([title, url]) => (
+            <a
+              href={url}
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
+            >
+              {title}
+            </a>
+          ))
+        }
+      </div>
     </div>
-    <div class="mx-10">
-      <a href="#" class="font-medium">Logo</a>
-    </div>
-    <div class="hidden sm:flex absolute inset-0 justify-center space-x-5">
-      {
-        [
-          ["Button 1", "#"],
-          ["Button 2", "#"],
-          ["Button 3", "#"],
-        ].map(([title, url]) => (
-          <a
-            href={url}
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 text-base font-medium text-center"
-          >
-            {title}
-          </a>
-        ))
-      }
-    </div>
-  </div>
-
-  <!-- Menu mobile visibility:none -->
-  <menu class="block relative m-5">
+    <!-- Menu mobile visibility:none -->
+  </nav>
+  <menu class="flex-1 mx-8 my-4">
     <div
       id="mobile-menu"
-      class="bg-blue-700 space-y-3 px-2 pb-3 pt-2 rounded-md sm:hidden hidden"
+      class="px-2 pb-3 pt-2 space-y-4 rounded-md sm:hidden hidden"
     >
       {
         [
-          ["Button 1", "#"],
+          ["Button 2", "#"],
           ["Button 2", "#"],
           ["Button 3", "#"],
         ].map(([title, url]) => (
           <a
             href={url}
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium text-center"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md text-base font-medium text-center"
           >
             {title}
           </a>
@@ -54,7 +55,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
       }
     </div>
   </menu>
-</nav>
+</header>
 
 <script>
   import "../scripts/navigation.js";
