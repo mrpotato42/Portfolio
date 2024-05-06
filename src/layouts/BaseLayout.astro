@@ -1,7 +1,7 @@
 ---
+import Card from "../components/Cards/Card.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import MainLayout from "./MainLayout.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -14,10 +14,11 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
 
-  <body class="bg-custom-img bg-[length:100%]">
+  <body class="bg-custom-img bg-[length:100%] m-5">
     <main>
       <Navbar />
-      <MainLayout />
+      <Card sectionId="Profile" />
+      <Card sectionId="Projects" />
       <slot />
       <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
     </main>
