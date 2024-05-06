@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "image-gradient":
-          'linear-gradient(to top, #6366f1 55%, transparent), url("public/images/wisky2.webp")',
+        "custom-img":
+          'linear-gradient(to top, #6366f1 55%, transparent), url("/images/wisky2.webp")',
       },
     },
   },
