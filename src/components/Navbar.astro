@@ -2,18 +2,18 @@
 import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 ---
 
-<header class="sticky top-0 z-20">
-  <nav
+<nav class="sticky top-0 z-20">
+  <div
     class="flex mx-5 bg-gradient-to-r from-indigo-500 h-10 mt-6 items-center content-center rounded"
   >
     <div class="flex w-screen justify-between mx-6">
+      <div class="mx-10">
+        <a href="#" class="font-medium">Logo</a>
+      </div>
       <div
         class="relative inline-flex items-center justify-center sm:hidden hover:bg-blue-700 mx-8"
       >
         <button id="menu-button"><HamburgerIcon /></button>
-      </div>
-      <div class="mx-10">
-        <a href="#" class="font-medium">Logo</a>
       </div>
       <!-- menu on desktop -->
       <div class="hidden sm:flex absolute inset-0 justify-center items-center">
@@ -34,7 +34,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
       </div>
     </div>
     <!-- Menu mobile visibility:none -->
-  </nav>
+  </div>
   <menu class="flex-1 mx-8 my-4">
     <div
       id="mobile-menu"
@@ -56,7 +56,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
       }
     </div>
   </menu>
-</header>
+</nav>
 
 <script>
   import "../scripts/navigation.js";

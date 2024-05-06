@@ -2,7 +2,12 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "image-gradient":
+          'linear-gradient(to top, #6366f1 55%, transparent), url("public/images/wisky2.webp")',
+      },
+    },
   },
   plugins: [],
 };

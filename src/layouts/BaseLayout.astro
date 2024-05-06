@@ -12,13 +12,12 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-
-  <body
-    class="bg-[url('/images/wisky2.webp')] h-screen w-full bg-cover bg-center"
+    <link href="tailwind.css" rel="stylesheet" /><title>
+      {pageTitle}
+    </title></head
   >
-    <!-- <Navigation /> -->
+
+  <body class="bg-image-gradient">
     <main>
       <Navbar />
       <MainLayout />
