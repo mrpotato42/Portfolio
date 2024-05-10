@@ -7,6 +7,9 @@ export default {
         "custom-img":
           'linear-gradient(to top, #6366f1 86%, transparent), url("/images/wisky2.webp")',
       },
+      fontFamily: {
+        titillium: [' "Titillium Web", sans-serif'],
+      },
     },
   },
   plugins: [],

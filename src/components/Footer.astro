@@ -1,9 +1,19 @@
 ---
 import Social from "./Social.astro";
+import HeartIcon from "./Icons/HeartIcon.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="flex-col px-1 space-x-2">
-  <Social platform="LinkedIn" username="danielcg99" />
-  <Social platform="Github" username="mrpotato42" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="flex-col px-1 w-full items-center max-w-5xl">
+  <div
+    class="w-full h-full bg-gray-600 opacity-75 rounded-2xl flex items-center justify-center px-10"
+  >
+    <div class="flex flex-col text-center lg:max-w-fit my-6 space-y-3">
+      <p>© {currentYear} Daniel Criollo.</p>
+      <p class="items-center gap-2 flex">
+        Made with <span class="text-red-600"><HeartIcon /></span> and Astro.
+      </p>
+    </div>
+  </div>
 </footer>
