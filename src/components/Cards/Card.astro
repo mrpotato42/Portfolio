@@ -7,14 +7,14 @@ const { sectionId } = Astro.props;
 
 <section
   id={sectionId}
-  class="mx-5 py-px my-6 bg-coquimbo-200/30 rounded-xl h-full"
+  class="mx-5 py-px my-6 bg-coquimbo-200/30 rounded-xl h-full font-titillium"
 >
   <div class="grid grid-rows-1 grid-cols-1 m-6 rounded-t-xl">
     <div class="grid grid-rows-2 grid-cols-3 justify-items-center">
       <div class="scale-[1.5] col-start-2 mt-14 h-36 w-36 rounded-full bg-profile-img bg-[length:100%]">
       </div>
       <div
-        class="flex row-start-2 col-start-1 col-span-3 z-0 h-40 mx-3 sm:max-h-max text-sm text-center"
+        class="flex row-start-2 col-start-1 col-span-3 z-0 h-40 mx-3 sm:max-h-max text-center"
       >
         <CardMenu />
       </div>
@@ -22,12 +22,12 @@ const { sectionId } = Astro.props;
   </div>
   <div class="grid grid-rows-1 grid-cols-4 m-6 -mt-6 rounded-b-xl">
     <div
-      class="flex bg-red-400 col-span-1 my-7 mx-3 w-3/4 h-64 justify-center items-center"
+      class="flex col-span-1 my-7 mx-[1.6rem] w-3/4 h-64 items-center"
     >
       <NavCard />
     </div>
     <div
-      class="flex col-start-2 col-span-3 my-7 mx-3 h-64 sm:max-h-max text-sm"
+      class="flex col-start-2 col-span-3 my-7 mx-3 h-64 sm:max-h-max"
     >
       <CardMenu />
     </div>
