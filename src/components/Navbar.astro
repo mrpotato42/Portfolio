@@ -2,63 +2,27 @@
 import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 ---
 
-<nav class="sticky top-0 z-20">
+<nav class="relative z-20">
   <div
-    class="flex bg-gradient-to-r from-indigo-500 h-16 mt-6 items-center content-center rounded"
+    class="flex bg-gradient-to-b to-35% from-obesamaleta/60  h-16 justify-between items-center content-center rounded"
   >
-    <div class="scale-110 flex w-screen justify-between mx-6">
-      <div class="mx-10 sm:mx-20 md:mx-40">
-        <a href="#" class="font-medium">Logo</a>
-      </div>
-      <div
-        id="div-button"
-        class="relative inline-flex items-center justify-center sm:hidden shadow-lg rounded-md mx-8"
-      >
-        <button id="menu-button" class="text-slate-100"
-          ><HamburgerIcon /></button
-        >
-      </div>
-      <!-- menu on desktop -->
-      <div class="hidden sm:flex absolute inset-0 justify-center items-center">
-        {
-          [
-            ["Button 1", "#"],
-            ["Button 2", "#"],
-            ["Button 3", "#"],
-          ].map(([title, url]) => (
-            <a
-              href={url}
-              class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 text-base font-medium text-center"
-            >
-              {title}
-            </a>
-          ))
-        }
-      </div>
-    </div>
-    <!-- Menu mobile visibility:none -->
-  </div>
-  <menu class="flex-1 mx-8 my-4">
-    <div
-      id="mobile-menu"
-      class="px-2 pb-3 pt-2 space-y-4 rounded-md sm:hidden hidden"
-    >
+    <div class="flex absolute inset-0 justify-around mx-10 items-center">
       {
         [
-          ["Button 2", "#"],
-          ["Button 2", "#"],
-          ["Button 3", "#"],
+          ["Profile", "#"],
+          ["Projects", "#"],
+          ["Experience", "#"],
         ].map(([title, url]) => (
           <a
             href={url}
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md text-base font-medium text-center"
+            class="text-slate-200 rounded-md px-3 font-medium text-center transition hover:scale-110 hover:bg-gareta/40 hover:text-white"
           >
             {title}
           </a>
         ))
       }
     </div>
-  </menu>
+  </div>
 </nav>
 
 <script>

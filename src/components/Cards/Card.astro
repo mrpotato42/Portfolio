@@ -7,7 +7,7 @@ const { sectionId } = Astro.props;
 
 <section
   id={sectionId}
-  class="mx-5 py-px mb-14 mt-6 bg-slate-600/50 rounded-lg h-full"
+  class="mx-5 py-px my-6 bg-slate-600/50 rounded-lg h-full"
 >
   <div class="grid grid-rows-1 grid-cols-1 m-6 bg-blue-400">
     <div class="grid grid-rows-2 grid-cols-3 justify-items-center">
@@ -25,7 +25,9 @@ const { sectionId } = Astro.props;
     </div>
   </div>
   <div class="grid grid-rows-1 grid-cols-3 m-6 -mt-6 bg-blue-400">
-    <div class="flex bg-red-400 col-span-1 my-7 mx-3 w-3/4 h-64">
+    <div
+      class="flex bg-red-400 col-span-1 my-7 mx-3 w-3/4 h-64 justify-center items-center"
+    >
       <NavCard />
     </div>
     <div

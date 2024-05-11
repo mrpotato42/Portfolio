@@ -5,10 +5,20 @@ export default {
     extend: {
       backgroundImage: {
         "custom-img":
-          'linear-gradient(to top, #6366f1 86%, transparent), url("/images/wisky2.webp")',
+          'linear-gradient(to top, #1A2833 86%, transparent), url("/images/wisky2.webp")',
       },
       fontFamily: {
         titillium: [' "Titillium Web", sans-serif'],
+      },
+      colors: {
+        transparent: "transparent",
+        "current": "currentColor",
+        "lamurga": "#166683",
+        "gareta": "#1D4958",
+        "coquimbo": "#007EAD",
+        "obesamaleta": "#1D3E58",
+        "chu": "#1D4958",
+        "palateta": "#1D4958",
       },
     },
   },

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.classList.add("hidden");
     divButton.classList.toggle("hover:to-transparent");
     divButton.classList.toggle("hover:bg-gradient-to-t");
-    menuButton.classList.toggle("hover:rounded-md");
     menuButton.classList.toggle("hover:shadow");
   }
 
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.classList.remove("hidden");
     divButton.classList.toggle("hover:to-transparent");
     divButton.classList.toggle("hover:bg-gradient-to-t");
-    menuButton.classList.toggle("hover:rounded-md");
     menuButton.classList.toggle("hover:shadow");
   }
   // Event listener para el botón del menú

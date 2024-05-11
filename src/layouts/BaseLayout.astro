@@ -2,8 +2,6 @@
 import Card from "../components/Cards/Card.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-
-const { pageTitle } = Astro.props;
 ---
 
 <html lang="es">
@@ -39,11 +37,8 @@ const { pageTitle } = Astro.props;
 
   <body class="bg-custom-img bg-[length:100%] m-5">
     <Navbar />
-    <main class="">
-      <Card title="Profile" />
-      <Card title="Projects" />
-      <slot />
-      <!--Esta etiqueta permite insertar contenido hijo de las etiquetas de cualquier archivo -->
+    <main>
+      <Card />
     </main>
     <Footer />
   </body>
