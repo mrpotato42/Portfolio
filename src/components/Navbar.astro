@@ -4,14 +4,15 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 
 <nav class="relative z-20">
   <div
-    class="flex bg-gradient-to-b to-60% from-coquimbo-200/60  h-16 justify-between items-center content-center rounded"
+    class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-between items-center content-center rounded-xl"
   >
-    <div class="flex absolute inset-0 justify-around mx-10 items-center">
+    <div class="flex absolute inset-0 justify-around mx-5 items-center">
       {
         [
           ["Profile", "#"],
           ["Projects", "#"],
           ["Experience", "#"],
+          ["Habilities", "#"],
         ].map(([title, url]) => (
           <a
             href={url}

@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "custom-img": 'linear-gradient(to top, #1A2833 86%, transparent), url("/images/wisky2.webp")',
-        "radial-gradient": 'radial-gradient(circle at center, transparent 0%, #166683 100%)',
-      },
+        "custom-img": 'linear-gradient(to top, #1A2833 75%, transparent), url("/images/background.webp")',
+        "profile-img": 'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/profile.jpg")',
+      }, 
       fontFamily: {
         titillium: [' "Titillium Web", sans-serif'],
       },
@@ -19,7 +19,12 @@ export default {
           300: "#166683",
           400: "#0075AD",
         },
-        "palateta": "#1D4958",
+        "andagareta": {
+          100: "#AD5E00",
+          200: "#583E1D",
+          300: "#332B22",
+          
+        },
       },
     },
   },
