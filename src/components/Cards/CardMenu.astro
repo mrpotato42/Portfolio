@@ -1,7 +1,11 @@
+---
+const { title, subtitle, body } = Astro.props;
+---
+
 <div class="flex bg-red-300 p-4 overflow-y-scroll">
   <div class="space-y-2">
-    <h2>Titulo de la tarjeta</h2>
-    <h3>Subtitlo tarjeta</h3>
+    <h2>{title}</h2>
+    <h3>{subtitle}</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odio quod?
       Aut porro laborum culpa est dolores possimus id exercitationem ipsum animi
