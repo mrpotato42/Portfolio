@@ -6,7 +6,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
   <div
     class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-between items-center content-center rounded-xl"
   >
-    <div class="flex absolute inset-0 justify-around mx-5 items-center">
+    <div class="flex absolute inset-0 justify-around mx-4 items-center">
       {
         [
           ["Profile", "#"],
@@ -16,7 +16,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
         ].map(([title, url]) => (
           <a
             href={url}
-            class="text-slate-200 font-titillium rounded-md px-3 font-medium text-center transition hover:scale-110 hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:shadow-coquimbo-400/30 hover:shadow-xl"
+            class="text-slate-200 text-m font-titillium rounded-md px-3 font-medium text-center transition hover:scale-110 hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:shadow-coquimbo-400/30 hover:shadow-xl"
           >
             {title}
           </a>
