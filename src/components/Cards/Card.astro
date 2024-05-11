@@ -8,32 +8,30 @@ const { sectionId } = Astro.props;
   id={sectionId}
   class="mx-5 py-px mb-14 mt-6 bg-slate-600/50 rounded-lg h-full"
 >
-  <div class="bg-black grid grid-rows-2 grid-cols-1 m-6">
-    <div class="row-span-1 bg-blue-400">
-      <div class="grid grid-rows-2 grid-cols-3">
-        <div
-          class="scale-150 row-span-1 col-span-2 rounded-full h-1/3 w-1/2 mt-10 mx-14"
-        >
-          <img
-            class="rounded-full object-cover"
-            src="images/11.png"
-          />
-        </div>
-        <div
-          class="flex bg-red-600 row-start-2 col-start-2 col-span-2 mb-5 mr-10 z-0 h-40 sm:max-h-max text-sm"
-        >
-          <CardMenu />
-        </div>
+  <div class="grid grid-rows-1 grid-cols-1 m-6 bg-blue-400">
+    <div class="grid grid-rows-2 grid-cols-3">
+      <div
+        class="scale-150 row-span-1 col-span-2 rounded-full h-1/3 w-1/2 mt-10 mx-14"
+      >
+        <img
+          class="rounded-full object-cover"
+          src="images/11.png"
+        />
+      </div>
+      <div
+        class="flex bg-red-600 row-start-2 col-start-2 col-span-2 mb-5 mr-10 z-0 h-40 sm:max-h-max text-sm"
+      >
+        <CardMenu />
       </div>
     </div>
-    <div class="row-start-2 row-span-1 bg-blue-400">
-      <div class="grid grid-rows-2 grid-cols-3 justify-items-center">
-        <div class="row-span-2 bg-red-400 col-span-1 my-7 w-3/4">vertical</div>
-        <div
-          class="flex row-start-1 row-span-2 col-start-2 col-span-2 my-7 mr-10 z-0 h-screen sm:max-h-max text-sm"
-        >
-          <CardMenu />
-        </div>
+  </div>
+  <div class="grid grid-rows-1 grid-cols-1 m-6 -mt-6 row-span-1 bg-blue-400">
+    <div class="grid grid-rows-2 grid-cols-3 justify-items-center">
+      <div class="row-span-2 bg-red-400 col-span-1 my-7 w-3/4">vertical</div>
+      <div
+        class="flex row-start-1 row-span-2 col-start-2 col-span-2 my-7 mr-10 z-0 h-80 sm:max-h-max text-sm"
+      >
+        <CardMenu />
       </div>
     </div>
   </div>
