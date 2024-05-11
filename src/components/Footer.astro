@@ -5,13 +5,13 @@ import HeartIcon from "./Icons/HeartIcon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="flex-col px-1 w-full items-center">
+<footer class="flex-col px-1 w-full items-center font-titillium text-white">
   <div
-    class="w-full h-full bg-gray-600 opacity-75 rounded-2xl flex items-center justify-center px-10"
+    class="flex w-full h-full from-coquimbo-200/60 bg-gradient-to-t to-65% rounded-xl items-center justify-center px-10"
   >
     <div class="flex flex-col text-center lg:max-w-fit my-6 space-y-3">
       <p>© {currentYear} Daniel Criollo.</p>
-      <p class="items-center gap-2 flex">
+      <p class="items-center gap-1 flex">
         Made with <span class="text-red-600"><HeartIcon /></span> and Astro.
       </p>
     </div>
