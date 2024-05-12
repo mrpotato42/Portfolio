@@ -10,9 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/upgrade": "^0.3.0",
-    "astro": "^4.7.0"
+    "astro": "^4.7.0",
+    "preact": "^10.21.0"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

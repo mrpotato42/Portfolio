@@ -2,50 +2,9 @@
 import CardMenu from "./CardMenu.astro";
 import NavCard from "../Cards/NavCard.astro";
 
-const { sectionId } = Astro.props;
-
-interface Job {
-  title: string
-  company: string
-  date: string
-  url: string
-  image: string
-}
-
-const jobs: Job[] = [
-  {
-    title: 'Full-stack Developer',
-    company: 'Imprimu',
-    date: '04 / 2022 — 01 / 2024',
-    url: 'https://imprimu.com/es/',
-    image: '/images/printing.jpg'
-  },
-  {
-    title: 'Front-end Developer',
-    company: 'Swiset',
-    date: '05 / 2023 — 12 / 2023',
-    url: 'https://swiset.com/es/',
-    image: '/images/trading.jpg'
-  },
-  {
-    title: 'Front-end Developer',
-    company: 'Pragma',
-    date: '05 / 2021 — 12 / 2021',
-    url: 'https://www.pragma.co/es/',
-    image: '/images/development.jpg'
-  },
-  {
-    title: 'Full-stack Developer',
-    company: 'Monquick',
-    date: '12 / 2019 — 04 / 2021',
-    url: 'https://monquick.com',
-    image: '/images/development-2.jpg'
-  }
-]
 ---
 
 <section
-  id={sectionId}
   class="sm:w-2/5 mx-5 py-px my-6 bg-coquimbo-200/30 rounded-xl h-full font-titillium sm:justify-items-center"
 >
   <div class="grid grid-rows-1 grid-cols-1 m-3 rounded-t-xl">
@@ -55,7 +14,7 @@ const jobs: Job[] = [
       <div
         class="flex row-start-2 col-start-1 col-span-3 z-0 h-40 mx-3 sm:max-h-max text-center"
       >
-        <CardMenu />
+        <CardMenu title={"Null"}/>
       </div>
     </div>
   </div>

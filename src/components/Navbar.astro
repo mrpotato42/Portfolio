@@ -1,26 +1,26 @@
 ---
-import HamburgerIcon from "./Icons/Hamburger.icon.astro";
+
 ---
 
 <nav class="relative z-20">
-  <div
+  <div id="otraid"
     class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-center items-center rounded-xl w-full"
   >
     <div class="grid grid-flow-col sm:grid-cols-4 w-5/6
      items-center content-center justify-items-center">
       {
         [
-          ["Profile", "#"],
-          ["Projects", "#"],
-          ["Experience", "#"],
-          ["Habilities", "#"],
-        ].map(([title, url]) => (
-          <a
-            href={url}
+          ["Profile"],
+          ["Projects"],
+          ["Experience"],
+          ["Social"],
+        ].map(([title]) => (
+          <button
+            title={title}
             class="text-slate-200 col-span-1 text-sm  font-titillium rounded-md px-1 font-medium text-center transition hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:text-base hover:shadow-coquimbo-400/70 hover:shadow-xl"
           >
             {title}
-          </a>
+          </button>
         ))
       }
     </div>
