@@ -4,9 +4,10 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
 
 <nav class="relative z-20">
   <div
-    class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-between items-center content-center rounded-xl"
+    class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-center items-center rounded-xl w-full"
   >
-    <div class="flex absolute inset-0 justify-around mx-4 items-center">
+    <div class="grid grid-flow-col sm:grid-cols-4 w-5/6
+     items-center content-center justify-items-center">
       {
         [
           ["Profile", "#"],
@@ -16,7 +17,7 @@ import HamburgerIcon from "./Icons/Hamburger.icon.astro";
         ].map(([title, url]) => (
           <a
             href={url}
-            class="text-slate-200 text-sm font-titillium rounded-md px-3 font-medium text-center transition hover:scale-110 hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:text-lg hover:shadow-coquimbo-400/50 hover:shadow-xl"
+            class="text-slate-200 col-span-1 text-sm  font-titillium rounded-md px-1 font-medium text-center transition hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:text-base hover:shadow-coquimbo-400/70 hover:shadow-xl"
           >
             {title}
           </a>
