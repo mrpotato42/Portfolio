@@ -1,6 +1,3 @@
----
-
----
 
 <nav class="relative z-20">
   <div id="otraid"
@@ -10,12 +7,13 @@
      items-center content-center justify-items-center">
       {
         [
-          ["Profile"],
-          ["Projects"],
-          ["Experience"],
-          ["Social"],
-        ].map(([title]) => (
+          ["Profile", "0"],
+          ["Projects", "1"],
+          ["Experience", "2"],
+          ["Skills", "3"],
+        ].map(([title, url]) => (
           <button
+            id-url={url}
             title={title}
             class="text-slate-200 col-span-1 text-sm  font-titillium rounded-md px-1 font-medium text-center transition hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:text-base hover:shadow-coquimbo-400/70 hover:shadow-xl"
           >

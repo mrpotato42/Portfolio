@@ -8,6 +8,12 @@ export default {
           'linear-gradient(to top, #1A2833 75%, transparent), url("/images/background.webp")',
         "profile-img":
           'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/profile.jpg")',
+        "projects-img":
+          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/projects.jpg")',
+        "experience-img":
+          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/experience.jpg")',
+        "skills-img":
+          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/skills.jpg")',
       },
       fontFamily: {
         titillium: [' "Titillium Web", sans-serif'],
