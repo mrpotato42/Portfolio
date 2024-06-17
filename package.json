@@ -1,9 +1,9 @@
 {
   "name": "my-web-page",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "potato": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
