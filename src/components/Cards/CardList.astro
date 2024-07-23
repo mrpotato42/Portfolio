@@ -1,0 +1,52 @@
+---
+import Card from "./Card.astro";
+
+const cardData = [
+    {
+      id: 1,
+      title: "Profile",
+      subtitle: "A new look on my life...",
+      description: "Aquí puedes encontrar descripción de mi perfil",
+      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      img: "images/profile.jpg",
+    },
+    {
+      id: 2,
+      title: "Projects",
+      subtitle: "A new look on my projects...",
+      description: "Aquí puedes encontrar descripción de mis proyectos",
+      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      img: "images/projects.jpg",
+    },
+    {
+      id: 3,
+      title: "Experience",
+      subtitle: "A new look on my experience...",
+      description: "Aquí puedes encontrar descripción de mi experiencia",
+      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      img: "images/experience.jpg",
+    },
+    {
+      id: 4,
+      title: "Skills",
+      subtitle: "A new look on my skills...",
+      description: "Aquí puedes encontrar descripción de mi habilidades",
+      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      img: "images/skills.jpg",
+    },
+  ];
+---
+
+<div class="carousel rounded-box w-full h-full ">
+    {
+        cardData.map(({id, title, subtitle, description, menuDescription, img}) => {
+            return (
+                <div class="carousel-item w-max h-4/5">
+                    <div class="">
+                        <Card id={id} title={title} subtitle={subtitle} description={description} menuDescription={menuDescription} img={img}/>
+                    </div>
+                </div>
+            )
+        })
+    }
+</div>
