@@ -1,5 +1,5 @@
 
-<nav class="relative z-20 m-5">
+<nav class="h-16 z-20 m-5">
   <div id="otraid"
     class="flex bg-gradient-to-b to-60% from-coquimbo-200/80 h-16 justify-center items-center rounded-xl w-full"
   >
@@ -7,14 +7,14 @@
      items-center content-center justify-items-center">
       {
         [
-          ["Profile", "../"],
-          ["Projects", "projects"],
-          ["Experience", "experience"],
-          ["Skills", "skills"],
+          ["Profile", "#Profile"],
+          ["Projects", "#Projects"],
+          ["Experience", "#Experience"],
+          ["Skills", "#Skills"],
         ].map(([title, url]) => (
           <a
             id={url}
-            
+            href={url}
             id-url={url}
             title={title}
             class="text-slate-200 col-span-1 text-sm  font-titillium rounded-md px-1 font-medium text-center transition hover:bg-coquimbo-400/60 hover:text-white hover:font-bold hover:text-base hover:shadow-coquimbo-400/70 hover:shadow-xl"

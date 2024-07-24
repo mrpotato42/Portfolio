@@ -7,7 +7,7 @@ const cardData = [
       title: "Profile",
       subtitle: "A new look on my life...",
       description: "Aquí puedes encontrar descripción de mi perfil",
-      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      menuDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
       img: "images/profile.jpg",
     },
     {
@@ -37,16 +37,15 @@ const cardData = [
   ];
 ---
 
-<div class="carousel rounded-box w-full h-full ">
+<div class="carousel w-full h-full ">
     {
         cardData.map(({id, title, subtitle, description, menuDescription, img}) => {
             return (
-                <div class="carousel-item w-max h-4/5">
-                    <div class="">
+                <div class="carousel-item w-full h-full" id={title}>
                         <Card id={id} title={title} subtitle={subtitle} description={description} menuDescription={menuDescription} img={img}/>
-                    </div>
                 </div>
             )
         })
     }
 </div>
+
