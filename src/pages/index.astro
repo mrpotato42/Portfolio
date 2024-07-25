@@ -1,7 +1,12 @@
 ---
+import CardList from "../components/Cards/CardList.astro";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const { pageTitle } = Astro.props;
 ---
+<BaseLayout>
 
-<BaseLayout pageTitle={pageTitle} />
+        <CardList/>
+
+</BaseLayout>
+

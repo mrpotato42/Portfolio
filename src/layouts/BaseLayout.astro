@@ -1,46 +1,27 @@
 ---
-import Card from "../components/Cards/Card.astro";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
-
+import Footer from "../components/Layout/Footer.astro";
+import Navbar from "../components/Layout/Navbar.astro";
 ---
 
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kode+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kode+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-  <body class="flex flex-col bg-custom-img bg-[length:100%] m-5">
-    <Navbar />
-    <main class="sm:flex sm:items-center sm:justify-center">
-      <Card />
-    </main>
-    <Footer />
-  </body>
+    <body class="flex flex-col bg-custom-img bg-[length:100%] w-screen h-screen justify-between"> <!-- aquí hay un problema de diseño con h-dvh y el tamaño más pequeño de la pantalla, intercambiar entre h-full/screen y h-dvh -->
+        <Navbar />
+        <main class="flex h-[70%] w-full">
+            <slot>
+        </main>
+        <Footer />
+    </body>
 </html>

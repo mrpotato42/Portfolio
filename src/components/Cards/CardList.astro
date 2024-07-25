@@ -1,11 +1,14 @@
-export const cardData = [
+---
+import Card from "./Card.astro";
+
+const cardData = [
     {
       id: 1,
       title: "Profile",
       subtitle: "A new look on my life...",
       description: "Aquí puedes encontrar descripción de mi perfil",
-      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
-      img: "bg-profile-img",
+      menuDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      img: "images/profile.jpg",
     },
     {
       id: 2,
@@ -13,7 +16,7 @@ export const cardData = [
       subtitle: "A new look on my projects...",
       description: "Aquí puedes encontrar descripción de mis proyectos",
       menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
-      img: "bg-projects-img",
+      img: "images/projects.jpg",
     },
     {
       id: 3,
@@ -21,7 +24,7 @@ export const cardData = [
       subtitle: "A new look on my experience...",
       description: "Aquí puedes encontrar descripción de mi experiencia",
       menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
-      img: "bg-experience-img",
+      img: "images/experience.jpg",
     },
     {
       id: 4,
@@ -29,6 +32,20 @@ export const cardData = [
       subtitle: "A new look on my skills...",
       description: "Aquí puedes encontrar descripción de mi habilidades",
       menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
-      img: "bg-social-img",
+      img: "images/skills.jpg",
     },
   ];
+---
+
+<div class="carousel w-full h-full ">
+    {
+        cardData.map(({id, title, subtitle, description, menuDescription, img}) => {
+            return (
+                <div class="carousel-item w-full h-full" id={title}>
+                        <Card id={id} title={title} subtitle={subtitle} description={description} menuDescription={menuDescription} img={img}/>
+                </div>
+            )
+        })
+    }
+</div>
+
