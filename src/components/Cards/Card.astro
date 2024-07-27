@@ -13,7 +13,7 @@ const { id, title, subtitle, description, menuDescription, img } = Astro.props;
 
 <div class="grid grid-rows-2 bg-coquimbo-200/30 font-titillium sm:justify-items-center rounded-2xl h-full w-screen mx-10 pt-8">
     <div id="photo-card" class="w-3/4 max-w-60 rounded-full bg-[length:100%] justify-self-center self-center">
-        <img src={img} alt="" class="object-cover rounded-full" />
+        <img src={img} alt="" class="object-cover rounded-full grayscale-[50] hover:grayscale-0" />
     </div>
     <div class="grid grid-rows-1 grid-cols-3 h-full w-full pt-6">
         <div class="flex row-start-1 col-start-1 col-span-3 z-0 h-full mx-3 sm:max-h-max text-center">
