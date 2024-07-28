@@ -19,7 +19,7 @@ import Navbar from "../components/Layout/Navbar.astro";
 
     <body class="flex flex-col bg-custom-img bg-[length:100%] w-screen h-screen justify-between"> <!-- aquí hay un problema de diseño con h-dvh y el tamaño más pequeño de la pantalla, intercambiar entre h-full/screen y h-dvh -->
         <Navbar />
-        <main class="flex h-[70%] w-[100%]">
+        <main class="flex max-h-[70%] w-[100%]">
             <slot>
         </main>
         <Footer />
