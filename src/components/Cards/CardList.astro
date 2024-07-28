@@ -5,44 +5,48 @@ const cardData = [
     {
       id: 1,
       title: "Profile",
-      subtitle: "A new look on my life...",
-      description: "Aquí puedes encontrar descripción de mi perfil",
-      menuDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus sint iusto itaque reiciendis? Eius voluptatum sit maxime earum, delectus magnam odit dolor eos quidem ullam totam laboriosam rerum aut! Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      subtitle: "Hello! My name is Daniel Fernando and...",
+      firstParagraph: "I graduated from Universidad del Valle with a degree in Information Systems Technology. I am from Cali, Colombia, and I have a solid background in technologies and software development.",
+      secondParagraph: "Through my academic training, I have acquired knowledge and technical skills in areas such as programming, databases, IT, and other essential teamwork skills. In addition to my technical competencies, I possess strong problem-solving abilities and can quickly adapt to new challenges.",
+      thirdParagraph: "",
       img: "images/profile.jpg",
     },
     {
       id: 2,
       title: "Projects",
-      subtitle: "A new look on my projects...",
-      description: "Aquí puedes encontrar descripción de mis proyectos",
-      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      subtitle: "This portfolio!",
+      firstParagraph: "And you can check out my GitHub",
+      secondParagraph: "",
+      thirdParagraph: "https://github.com/mrpotato42",
       img: "images/projects.jpg",
     },
     {
       id: 3,
       title: "Experience",
-      subtitle: "A new look on my experience...",
-      description: "Aquí puedes encontrar descripción de mi experiencia",
-      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      subtitle: "Oops! It looks like something is still under construction.",
+      firstParagraph: "",
+      secondParagraph: "",
+      thirdParagraph: "",
       img: "images/experience.jpg",
     },
     {
       id: 4,
       title: "Skills",
-      subtitle: "A new look on my skills...",
-      description: "Aquí puedes encontrar descripción de mi habilidades",
-      menuDescription: "Esta es la descripcion del menú inferior, aquí se encontrará una descripción más detallada, como datos personales y otro tipo de información relevante a la sección",
+      subtitle: "and more...",
+      firstParagraph: "I have skills in technologies such as JavaScript, HTML, and CSS. I have also worked with Tailwind and Bootstrap, React, and TypeScript. If you want to know more about the certification of my skills, you can visit my LinkedIn profile, where I have posted some of my achievements.",
+      secondParagraph: "",
+      thirdParagraph: "https://www.linkedin.com/in/danielcg99/",
       img: "images/skills.jpg",
     },
   ];
 ---
 
-<div class="carousel w-full h-full ">
+<div class="carousel w-full h-full">
     {
-        cardData.map(({id, title, subtitle, description, menuDescription, img}) => {
+        cardData.map(({id, title, subtitle, firstParagraph, secondParagraph, thirdParagraph, img}) => {
             return (
-                <div class="carousel-item w-full h-full" id={title}>
-                        <Card id={id} title={title} subtitle={subtitle} description={description} menuDescription={menuDescription} img={img}/>
+                <div class="carousel-item w-full h-full justify-center" id={title}>
+                        <Card id={id} title={title} subtitle={subtitle} firstParagraph={firstParagraph} secondParagraph={secondParagraph} thirdParagraph={thirdParagraph} img={img}/>
                 </div>
             )
         })

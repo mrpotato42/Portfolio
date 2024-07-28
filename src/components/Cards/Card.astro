@@ -3,27 +3,42 @@ export interface Props {
     id: number;
     title: string;
     subtitle: string;
-    description: string;
-    menuDescription: string;
+    firstParagraph: string;
+    secondParagraph: string;
+    thirdParagraph: any;
     img: string;
 }
 
-const { id, title, subtitle, description, menuDescription, img } = Astro.props;
+const { id, title, subtitle, firstParagraph, secondParagraph, thirdParagraph, img } = Astro.props;
+
+function url(url){
+    if(url==""){
+        return ""
+    }else{
+        return "¡Click on me!"
+    }
+}
+
+var link = url(thirdParagraph);
 ---
 
-<div class="grid grid-rows-2 bg-coquimbo-200/30 font-titillium sm:justify-items-center rounded-2xl h-full w-screen mx-10 pt-8">
+<div class="grid grid-rows-2 bg-coquimbo-200/30 font-titillium sm:justify-items-center rounded-2xl h-full w-screen mx-10 pt-8 md:w-1/2">
     <div id="photo-card" class="w-3/4 max-w-60 rounded-full bg-[length:100%] justify-self-center self-center">
-        <img src={img} alt="" class="object-cover rounded-full" />
+        <img src={img} alt="" class="object-cover rounded-full grayscale-[50] hover:grayscale-0" />
     </div>
-    <div class="grid grid-rows-1 grid-cols-3 h-full w-full pt-6">
+    <div class="grid grid-rows-1 grid-cols-3 h-full w-full px-4 md:pl-4">
         <div class="flex row-start-1 col-start-1 col-span-3 z-0 h-full mx-3 sm:max-h-max text-center">
             <div class="flex w-full bg-gradient-to-t justify-center from-coquimbo-400/50 to-75% overflow-y-scroll rounded-b-xl shadow-xl text-white mb-5">
-                <div id="cardMenu" class="space-y-2">
-                    <h2 class="font-bold text-2xl">{title}</h2>
-                    <h3 class="font-semibold text-lg">{subtitle}</h3>
-                    <p class="text-justify text-base px-5">
-                        {menuDescription}
+                <div id="cardMenu text-center">
+                    <h2 class="font-bold text-2xl pb-8 px-5">{title}</h2>
+                    <h3 class="font-semibold text-lg pb-6 px-5">{subtitle}</h3>
+                    <p class="text-base px-5 pb-2 text-justify">
+                        {firstParagraph}
                     </p>
+                    <p class="text-justify text-base px-5 pb-2">
+                        {secondParagraph}
+                    </p>
+                    <a class="text-center text-base italic pb-2" href={thirdParagraph} target="_blank">{link}</a>
                 </div>
             </div>
         </div>
