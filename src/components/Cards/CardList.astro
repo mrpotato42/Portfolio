@@ -41,11 +41,11 @@ const cardData = [
   ];
 ---
 
-<div class="carousel w-full h-full">
+<div class="w-full h-full">
     {
         cardData.map(({id, title, subtitle, firstParagraph, secondParagraph, thirdParagraph, img}) => {
             return (
-                <div class="carousel-item w-full h-full justify-center" id={title}>
+                <div class="" id={title}>
                         <Card id={id} title={title} subtitle={subtitle} firstParagraph={firstParagraph} secondParagraph={secondParagraph} thirdParagraph={thirdParagraph} img={img}/>
                 </div>
             )

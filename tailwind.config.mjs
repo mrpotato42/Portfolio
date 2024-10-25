@@ -16,7 +16,7 @@ export default {
           'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/skills.jpg")',
       },
       fontFamily: {
-        titillium: [' "Titillium Web", sans-serif'],
+        titillium: [' "Open Sans", sans-serif'],
       },
       colors: {
         transparent: "transparent",
