@@ -1,0 +1,43 @@
+---
+const { size, color } = Astro.props;
+const polygons = [
+    {
+        points: "16.8,-2.2 -5.1,13.7 -13.4,-2.6 1.7,-8.8",
+        color: "red",
+        shadow: "-1",
+    },
+    {
+        points: "12.3,0.6 -7.6,-9.3 -14.4,-1.6 9.7,11.4",
+        color: "purple",
+        shadow: "-3",
+    },
+    {
+        points: "9.6,3.3 -1.6,9.7 -15,-1.6 5,-13",
+        color: "green",
+        shadow: "-1",
+    },
+    {
+        points: "3,9.5 -7,5 -10,-15 9,-10",
+        color: "blue",
+        shadow: "-5",
+    },
+];
+
+---
+
+{
+    polygons
+        .filter((polygon) => polygon.color === color)
+        .map(({ points, color, shadow }) => (
+            <svg class="hover:scale-150 transition" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 40 40" width={size} height={size}>
+                    <defs>
+                        <filter id="f1">
+                            <feDropShadow dx="1" dy={shadow} stdDeviation="0.4" flood-opacity="0.7" />
+                        </filter>
+                    </defs>
+                <a href="https://www.w3schools.com/graphics/" target="_blank">
+                    <polygon filter="url(#f1)" points={points} fill="blue" stroke={color} stroke-width="0.5"/>
+                </a>
+            </svg>
+        ))
+}
