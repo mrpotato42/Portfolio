@@ -4,23 +4,52 @@ const polygons = [
     {
         points: "16.8,-2.2 -5.1,13.7 -13.4,-2.6 1.7,-8.8",
         color: "red",
-        shadow: "-1",
+        weightImage: "80%",
+        heightImage: "80%",
+        shadowDy: "-0.5",
+        shadowDx: "-2",
+        positionY: "0",
+        positionX: "-4",
+        shape:"skewX(25) skewY(-28)",
+        pathImg: "/images/experience.jpg",
     },
     {
         points: "12.3,0.6 -7.6,-9.3 -14.4,-1.6 9.7,11.4",
         color: "purple",
-        shadow: "-3",
+        weightImage: "65%",
+        heightImage: "65%",
+        shadowDy: "-0.5",
+        shadowDx: "1.5",
+        positionY: "-5",
+        positionX: "2",
+        shape:"skewX(-10) skewY(25)",
+        pathImg: "/images/projects.jpg",
     },
     {
         points: "9.6,3.3 -1.6,9.7 -15,-1.6 5,-13",
         color: "green",
-        shadow: "-1",
+        weightImage: "70%",
+        heightImage: "70%",
+        shadowDy: "-1",
+        shadowDx: "-1.5",
+        positionY: "1",
+        positionX: "-8",
+        shape:"skewX(20) skewY(-20)",
+        pathImg: "/images/window.jpg",
     },
     {
         points: "3,9.5 -7,5 -10,-15 9,-10",
         color: "blue",
-        shadow: "-5",
+        weightImage: "70%",
+        heightImage: "70%",
+        shadowDy: "-0.5",
+        shadowDx: "1.5",
+        positionY: "-6",
+        positionX: "-3",
+        shape:"skewX(-9) skewY(16)",
+        pathImg: "/images/profile.jpg",
     },
+    
 ];
 
 ---
@@ -28,16 +57,26 @@ const polygons = [
 {
     polygons
         .filter((polygon) => polygon.color === color)
-        .map(({ points, color, shadow }) => (
-            <svg class="hover:scale-150 transition" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 40 40" width={size} height={size}>
+        .map(({ points, color, shadowDy, shadowDx, pathImg, shape, positionY , positionX, weightImage, heightImage }) => (
+            <div class="polygon-container" style={{ width: `${size}px`, height: `${size}px` }}>
+                <svg class="hover:scale-150 transition" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 40 40" width={size} height={size}>
                     <defs>
-                        <filter id="f1">
-                            <feDropShadow dx="1" dy={shadow} stdDeviation="0.4" flood-opacity="0.7" />
+                        <filter id={`f1-${color}`}>
+                            <feDropShadow dx={shadowDx} dy={shadowDy} stdDeviation="0.4" flood-opacity="0.7" />
                         </filter>
                     </defs>
-                <a href="https://www.w3schools.com/graphics/" target="_blank">
-                    <polygon filter="url(#f1)" points={points} fill="blue" stroke={color} stroke-width="0.5"/>
-                </a>
-            </svg>
+                    <pattern id={`p1-${color}`} width="100%" height="100%">
+                        <image href={`${pathImg}`} x={`${positionX}`} y={`${positionY}`} width={`${weightImage}`} height={`${heightImage}`} transform={`${shape}`}/>
+                    </pattern>
+                    <text filter={`url(#f1-${color})`} x="-10" y="12" fill="red" font-size="5" transform={`${shape}`}>I love SVG!</text>
+                    <polygon 
+                        filter={`url(#f1-${color})`} 
+                        points={points} 
+                        fill={`url(#p1-${color})`} 
+                        stroke={color}
+                        stroke-width="0.5"
+                    />
+                </svg>
+            </div>
         ))
 }
