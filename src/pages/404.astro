@@ -1,23 +1,29 @@
 ---
+import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Base from "../layouts/Base.astro";
 ---
 
 <Base>
-    <main class="font-titillium flex flex-nowrap  flex-col m-2 p-1 text-black w-full h-full">
+    <main class="font-titillium flex flex-nowrap  flex-col m-2 p-1 text-black w-full h-full dark:text-dark-text">
+        
         <divHead class="flex basis-1/4 flex-row my-4 justify-center"> 
             <div class="flex-col space-y-8">
                 <h2 class="text-xs sm:text-base md:text-xl xl:text-2xl ml-1 text-center">Oops!</h2>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-primary via-30% to-green-600 text-center">404 x_x</h1>
             </div>
+            <div style="display: none;">
+                <DarkModeButton />
+            </div>
         </divHead>
+        
         
         <divBody class="flex flex-auto my-4 justify-center">
             <div class="flex flex-col w-2/5 items-stretch">
                 <p class="text-lg">The page you're looking for couldn't be found. Don't worry, we've got your back! You can always explore our site or head back to the homepage.</p>
                 
                 <div class="flex pl-6 space-x-6 mt-8 justify-center">
-                    <a href="/">
-                        <button class="btn btn-outline bg-indigo-600 hover:scale-110 hover:bg-indigo-300">Go Home</button>
+                    <a href="/" >
+                        <button class="btn btn-outline dark:btn-primary dark:bg-transparent bg-indigo-600 hover:scale-110 hover:bg-indigo-300 ">Go Home</button>
                     </a>
                 </div>
             </div>
