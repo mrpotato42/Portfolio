@@ -1,24 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: 'selector',
   theme: {
     extend: {
       backgroundImage: {
         "custom-img":
-          'linear-gradient(to top, #1A2833 75%, transparent), url("/images/background.webp")',
-        "profile-img":
-          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/profile.jpg")',
-        "projects-img":
-          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/projects.jpg")',
-        "experience-img":
-          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/experience.jpg")',
-        "skills-img":
-          'linear-gradient(to top, #1b323f 13%, #ffffff00 50%), url("/images/skills.jpg")',
+          'linear-gradient(to top, #1A2833 40%, transparent), url("/images/background.webp")',
       },
       fontFamily: {
         titillium: [' "Open Sans", sans-serif'],
       },
       colors: {
+        'dark-background': '#151618',
+        'dark-foreground': '#21232C',
+        'dark-text': '#e6e6e6',
+        background: '#F4F6FF',
+        foreground: '#ffffff',
         transparent: "transparent",
         current: "currentColor",
         coquimbo: {

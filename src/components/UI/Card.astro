@@ -50,10 +50,9 @@ const polygons = [
     .map(({ points, shadowDy, shadowDx, pathImg, shape, pathAnimation }) => (
       <div class={`${mt} absolute hover:z-30 z-10`}><a href={link} target="_blank">
         <svg
-          class="hover:stroke-indigo-500 hover:stroke-[0.4] hover:scale-[1.33] transition h-full w-full"
+          class="hover:stroke-indigo-500 hover:stroke-[0.4] hover:scale-[1.33] transition h-full w-full dark:hover:stroke-slate-50"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-20 -20 40 40"
-          
         >
           <defs>
             <filter id={`f1-${polygon}`}>
@@ -83,7 +82,6 @@ const polygons = [
             x="-10"
             y="11"
             fill="black"
-            stroke="white"
             stroke-width="0.05"
             font-size="3"
             transform={`${shape}`}
