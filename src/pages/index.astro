@@ -5,26 +5,25 @@ import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 ---
 <Base>
-	<main class="font-titillium flex flex-nowrap flex-col m-2 p-1 text-black dark:text-dark-text w-full h-full">
+	<main class="text-black font-titillium p-1 w-full h-full xl:flex xl:flex-nowrap xl:flex-col xl:m-2 dark:text-dark-text ">
 		<divHead class="flex basis-1/4 flex-row my-4 justify-between"> 
 			<div class="flex-col space-y-8">
 				<h2 class="text-xs sm:text-base md:text-xl xl:text-2xl ml-1">Hey, I'm</h2>
 				<h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600">Daniel Fernando</h1>
 			</div>
 			<div>
-			
 					<DarkModeButton />
 			</div>
 		</divHead>
-    	<divBody class="flex flex-auto my-4 justify-between">
-			<div class="flex flex-col w-2/5 justify-around items-stretch">
-				<h2 class="font-bold text-3xl">Developer with experience in design, development and maintenance of full-stack applications.</h2>
-				<p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae nulla voluptas fuga repudiandae! Reiciendis quae nulla voluptas fuga repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa fuga illo natus possimus eveniet cum consequuntur, eos debitis quos eligendi dicta laboriosam ipsam, sit aspernatur, quaerat eum! Rerum, illum?</p>
+    	<divBody class="flex flex-auto xl:my-4 justify-between">
+			<div class="flex flex-col w-2/5 justify-around items-stretch ml-1">
+				<h2 class="text-lg sm:text-xl md:text-1xl xl:text-3xl font-bold">Developer with experience in design, development and maintenance of full-stack applications.</h2>
+				<p class="text-xs sm:text-base md:text-xl xl:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae nulla voluptas fuga repudiandae! Reiciendis quae nulla voluptas fuga repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa fuga illo natus possimus eveniet cum consequuntur, eos debitis quos eligendi dicta laboriosam ipsam, sit aspernatur, quaerat eum! Rerum, illum?</p>
 				<div class="flex pl-6 space-x-6">
 					<a href="https://www.linkedin.com/in/danielcg99/" target="_blank">
 						<button class="btn btn-outline dark:btn-primary dark:bg-transparent bg-indigo-600 hover:scale-110 hover:bg-indigo-300">Contact me</button>
 					</a>
-					<a href="/cv/PotatoCV.pdf" download="PotatoCV">
+					<a href="/cv/CV Daniel Fernando.pdf" download="CV Daniel Fernando.pdf">
 						<button class="btn btn-outline dark:btn-primary dark:bg-transparent bg-indigo-600 hover:scale-110 hover:bg-indigo-300 ">Download CV</button>	
 					</a>
 				</div>
@@ -32,9 +31,9 @@ import DarkModeButton from "../components/UI/DarkModeButton.astro";
 			<div class="isolate relative w-7/12 p-6 content-center">
 				<div class="grid grid-rows-2 grid-cols-2 justify-items-center justify-center h-full">
 					<Target polygon="p1" mt="-mt-8 ml-24 left-0 top-0" txt="Get this template" link="https://github.com/mrpotato42/Portfolio/tree/new-version"/>
-					<Target polygon="p2" mt="-mt-12 mr-10 top-0 right-0" txt="Some books..." link="href"/>
-					<Target polygon="p3" mt="ml-8 bottom-0 left-0" txt="Look, my gallery" link="href"/>
-					<Target polygon="p4" mt="mb-10 mr-24 bottom-0 right-0" txt="Get to know me" link="href"/>
+					<Target polygon="p2" mt="-mt-12 mr-10 top-0 right-0" txt="Some books..." link="/404"/>
+					<Target polygon="p3" mt="ml-8 bottom-0 left-0" txt="Look, my gallery" link="https://www.instagram.com/44gatosenlaterraza/"/>
+					<Target polygon="p4" mt="mb-10 mr-24 bottom-0 right-0" txt="Get to know me" link="/404"/>
 				</div>
 			</div>
 		</divBody>

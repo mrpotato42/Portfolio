@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.5.3",
+    "@astrojs/preact": "^3.5.4",
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/upgrade": "^0.3.0",
-    "astro": "^4.16.7",
+    "astro": "^4.16.16",
     "preact": "^10.21.0"
   },
   "devDependencies": {
