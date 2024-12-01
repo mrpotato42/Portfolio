@@ -3,43 +3,49 @@ const { polygon, mt, txt, link } = Astro.props;
 const polygons = [
   {
     id: "p1",
-    points: "16.8,-2.2 -5.1,13.7 -13.4,-2.6 1.7,-8.8",
+    points: "30.4,7.4 8.7,22.9 1,7.8 15.3,2",
     shadowDy: "-0.5",
     shadowDx: "-2",
     shape: "skewX(25) skewY(-28)",
     pathImg: "/images/experience.jpg",
-    pathAnimation:
-      "M-1.485017,-1.365064C-2.941579,1.07804,-0.334961,3.155002,1.489058,1.514595C3.112397,-0.581776,0.815692,-3.262459,-1.485017,-1.365064Z",
+    positionX:"0",
+    positionY:"25",
+
+
   },
   {
     id: "p2",
-    points: "12.3,0.6 -7.6,-9.3 -14.4,-1.6 9.7,11.4",
+    points: "27.7,11.9 7.8,2 1,9.7 25.1,22.7",
     shadowDy: "-0.5",
     shadowDx: "1.5",
     shape: "skewX(-10) skewY(26)",
     pathImg: "/images/projects.jpg",
-    pathAnimation:
-      "M1.769394,1.531463C-0.554195,3.67281,-3.333391,0.756933,-1.510968,-1.156611C0.056427,-3.070155,3.272893,-0.974369,1.769394,1.531463Z",
+    positionX:"7",
+    positionY:"13",
+
+    
   },
   {
     id: "p3",
-    points: "9.6,3.3 -1.6,9.7 -15,-1.6 5,-13",
+    points: "25.6,18.3 14.4,24.7 1,13.4 21,2",
     shadowDy: "-1",
     shadowDx: "-1.5",
     shape: "skewX(20) skewY(-26)",
     pathImg: "/images/window.jpg",
-    pathAnimation:
-      "M1.359349,-1.521095C-0.641759,-3.125204,-3.094012,-0.588603,-1.237604,1.2581C1.12195,2.662296,3.085181,0.031185,1.359349,-1.521095Z",
+    positionX:"2",
+    positionY:"31",
+    
   },
   {
     id: "p4",
-    points: "3,9.5 -7,5 -10,-15 9,-10",
+    points: "14,26.5 4,22 1,2 20,7",
     shadowDy: "-0.5",
     shadowDx: "1.5",
     shape: "skewX(-10) skewY(22)",
     pathImg: "/images/profile.jpg",
-    pathAnimation:
-      "M-1.510968,1.349221C-3.151149,-0.792125,-0.690877,-3.070155,1.45047,-1.703338C3.318453,0.574692,0.7215,2.807159,-1.510968,1.349221Z",
+    positionX:"3",
+    positionY:"22",
+    
   },
 ];
 ---
@@ -47,12 +53,13 @@ const polygons = [
 {
   polygons
     .filter((figure) => figure.id === polygon)
-    .map(({ points, shadowDy, shadowDx, pathImg, shape, pathAnimation }) => (
-      <div class={`${mt} absolute hover:z-30 z-10`}><a href={link} target="_blank">
+    .map(({ points, shadowDy, shadowDx, pathImg, shape, positionX, positionY }) => (
+      <div class={`${mt} hover:z-30 z-10`}><a href={link} target="_blank">
         <svg
+
           class="hover:stroke-indigo-500 hover:stroke-[0.4] hover:scale-[1.33] transition h-full w-full dark:hover:stroke-slate-50"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="-20 -20 40 40"
+          viewBox="-5 0 40 40"
         >
           <defs>
             <filter id={`f1-${polygon}`}>
@@ -79,20 +86,15 @@ const polygons = [
           </defs>
           <text
             filter={`url(#f1-${polygon})`}
-            x="-10"
-            y="11"
+            x={positionX}
+            y={positionY}
             fill="black"
             stroke-width="0.05"
             font-size="3"
             transform={`${shape}`}
           >
             {txt}
-            <animateMotion
-              path={`${pathAnimation}`}
-              begin="0.1s"
-              dur="7s"
-              repeatCount="indefinite"
-            />
+
           </text>
           <polygon
             filter={`url(#f1-${polygon})`}
@@ -100,12 +102,7 @@ const polygons = [
             fill={`url(#p1-${polygon})`}
            
           >
-            <animateMotion
-              path={`${pathAnimation}`}
-              begin="0.1s"
-              dur="7s"
-              repeatCount="indefinite"
-            />
+
           </polygon>
         </svg></a>
       </div>

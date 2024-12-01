@@ -1,0 +1,11 @@
+---
+const { title, href = '#', download = '', target='' } = Astro.props
+---
+
+<a
+  href={href}
+  download={download}
+  target={target}
+  class='flex-row btn btn-outline dark:btn-primary dark:bg-transparent bg-indigo-600 hover:scale-110 hover:bg-indigo-300'>
+  {title}
+</a>
