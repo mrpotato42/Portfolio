@@ -3,33 +3,33 @@ import ThemeIcon from "../components/Icons/ThemeIcon.astro";
 import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
-import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
+import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
 ---
 <Base>
 	<main class="text-black font-titillium p-1 w-full h-full lg:flex lg:flex-nowrap lg:flex-col lg:m-2 dark:text-dark-text ">
 		<divHead class="flex basis-1/4 flex-row my-4 justify-between"> 
-			<div class="flex-col">
+			<div class="flex-col w-full ">
 				<h2 class="text-xs sm:text-base md:text-xl lg:text-2xl ml-1">Hey, I'm</h2>
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600">Daniel Fernando</h1>
+				<h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600">Daniel Fernando</h1>
 			</div>
-			<div class="flex self-center lg:flex lg:pl-6 space-x-4 pb-3">
+			<div class="h-1/4 items-start lg:flex lg:flex-row-reverse lg:gap-4 pr-6 pb-3 hidden">
 					<Button title="Contact me" href="https://www.linkedin.com/in/danielcg99/" target="_blank"/>
 					<Button title="Download CV" href="/cv/CV Daniel Fernando.pdf" download="CV Daniel Fernando.pdf"/>
 				</div>
-			<div class="flex ">
+			<div class="flex items-start">
 				<DarkModeButton />
 			</div>
 		</divHead>
-    	<divBody class="w-full grid auto-rows-[192px] grid-cols-6 gap-4 place-items-center">
-			<div class="col-span-3 lg:row-span-1 lg:col-span-1 text-center">
+    	<divBody class="w-full grid auto-rows-[192px] grid-cols-6 lg:grid-cols-7 gap-4 place-items-center">
+			<div class="col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col ">
 				<h1 class="text-2xl sm:text-xl md:text-1xl lg:text-5xl font-bold">+1</h1>
 				<h1 class="text-xs sm:text-sm md:text-base lg:text-md">years of experience</h1>
 			</div>
-			<div class="col-span-3 lg:row-span-1 lg:col-span-1 text-center">
+			<div class="col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col">
 				<h1 class="text-xs sm:text-sm md:text-base lg:text-md">From</h1>
 				<h1 class="text-2xl sm:text-xl md:text-1xl lg:text-3xl font-bold">Colombia</h1>
 			</div>
-			<div class="col-start-1 row-start-3 col-span-6 lg:col-start-4 lg:col-span-3 lg:row-span-2 h-full grid grid-cols-2 isolate relative p-6">
+			<div class="col-start-1 row-start-3 col-span-7 lg:col-start-5 lg:col-span-3 lg:row-span-2 h-full grid grid-cols-2 isolate relative p-6">
 							<!-- Ejemplo 1: Tarjeta inclinada hacia atrás -->
 				<div class="flex flex-col items-center gap-4">
 					<PerspectiveShape
@@ -37,7 +37,7 @@ import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
 					height={150}
 					rotationX={25}
 					rotationY={-15}
-					className="card bg-primary text-primary-content shadow-xl"
+					class="card bg-primary text-primary-content shadow-xl"
 					>
 					
 					</PerspectiveShape>
@@ -50,7 +50,7 @@ import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
 					height={190}
 					perspective={250}
 					rotationY={35}
-					className="rounded-lg overflow-hidden shadow-2xl"
+					class="rounded-lg overflow-hidden shadow-2xl"
 					>
 					<img src="images/window.jpg" alt="Portada" class="w-full h-full object-cover" />
 					</PerspectiveShape>
@@ -63,7 +63,7 @@ import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
 					height={100}
 					perspective={0}
 					skewX={-20}
-					className="bg-accent flex justify-center items-center font-black text-3xl text-accent-content "
+					class="bg-accent flex justify-center items-center font-black text-3xl text-accent-content "
 					>
 					SKEW
 					</PerspectiveShape>
@@ -74,14 +74,14 @@ import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
 					height={190}
 					rotationX={25}
 					rotationY={-15}
-					className="card bg-primary text-primary-content shadow-xl"
+					class="card bg-primary text-primary-content shadow-xl"
 					>
 					
 					</PerspectiveShape>
 				</div>
 			</div>
-			<div class="col-span-6 lg:row-span-1 lg:col-span-3 ml-1 ">
-				<p class="text-md sm:text-sm md:text-base lg:text-lg">I have skills in technologies such as JavaScript, HTML and CSS. I have also worked with Tailwind and Bootstrap, React and TypeScript. I have 1 year of experience in full-stack development, primarily focused on frontend. Some of my interests in technology include areas such as data analysis and cybersecurity. My professional career has equipped me to develop effective, secure and scalable products using Agile framework processes.</p>
+			<div class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-full w-full flex flex-col gap-4 justify-center dark:p-5 pl-1">
+				<p class="overflow-auto text-md sm:text-base lg:text-lg">I have skills in technologies such as JavaScript, HTML and CSS. I have also worked with Tailwind and Bootstrap, React and TypeScript. I have 1 year of experience in full-stack development, primarily focused on frontend. Some of my interests in technology include areas such as data analysis and cybersecurity. My professional career has equipped me to develop effective, secure and scalable products using Agile framework processes.</p>
 
 			</div>
 		</divBody>

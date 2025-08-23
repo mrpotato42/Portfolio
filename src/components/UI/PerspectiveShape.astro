@@ -1,0 +1,64 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'div'> {
+  // --- Contenido ---
+  // Los hijos se pasan a través de <slot />
+
+  // --- Dimensiones ---
+  width?: number | string;
+  height?: number | string;
+
+  // --- Perspectiva (propiedad del contenedor padre) ---
+  perspective?: number; // En píxeles. 0 para desactivar.
+  perspectiveOrigin?: string; // Ej: 'center', 'top right', '50% 50%'
+
+  // --- Transformaciones (propiedades del hijo) ---
+  rotationX?: number; // Rotación en grados
+  rotationY?: number; // Rotación en grados
+  rotationZ?: number; // Rotación en grados
+  skewX?: number; // Inclinación en grados
+  skewY?: number; // Inclinación en grados
+  scale?: number; // Escala (1 = 100%, 1.5 = 150%)
+
+  // --- Estilo y Clases ---
+  // `class` se hereda de HTMLAttributes y reemplaza a `className`
+  containerClassName?: string; // Clases para el contenedor de perspectiva (el exterior)
+}
+
+const {
+  width = '100%',
+  height = '100%',
+  perspective = 1000,
+  perspectiveOrigin = 'center',
+  rotationX = 0,
+  rotationY = 0,
+  rotationZ = 0,
+  skewX = 0,
+  skewY = 0,
+  scale = 1,
+  class: className,
+  containerClassName,
+  ...rest
+} = Astro.props;
+
+const transformStyle = {
+  transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) skewX(${skewX}deg) skewY(${skewY}deg) scale(${scale})`,
+};
+
+const containerStyle = {
+  perspective: perspective > 0 ? `${perspective}px` : 'none',
+  'perspective-origin': perspectiveOrigin,
+  width: typeof width === 'number' ? `${width}px` : width,
+  height: typeof height === 'number' ? `${height}px` : height,
+};
+---
+
+<div
+  style={containerStyle}
+  class:list={['transform-style-3d hover:scale-[1.33] transition-transform duration-500', containerClassName]}
+>
+  <div class:list={['w-full h-full', className]} style={transformStyle} {...rest}>
+    <slot />
+  </div>
+</div>
