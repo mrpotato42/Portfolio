@@ -1,37 +1,88 @@
 ---
-import Card from "../components/UI/Card.astro";
 import ThemeIcon from "../components/Icons/ThemeIcon.astro";
 import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
+import PerspectiveShape from "../components/UI/PerspectiveShape.tsx";
 ---
 <Base>
-	<main class="text-black font-titillium p-1 w-full h-full xl:flex xl:flex-nowrap xl:flex-col xl:m-2 dark:text-dark-text ">
+	<main class="text-black font-titillium p-1 w-full h-full lg:flex lg:flex-nowrap lg:flex-col lg:m-2 dark:text-dark-text ">
 		<divHead class="flex basis-1/4 flex-row my-4 justify-between"> 
-			<div class="flex-col space-y-8">
-				<h2 class="text-xs sm:text-base md:text-xl xl:text-2xl ml-1">Hey, I'm</h2>
-				<h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600">Daniel Fernando</h1>
+			<div class="flex-col">
+				<h2 class="text-xs sm:text-base md:text-xl lg:text-2xl ml-1">Hey, I'm</h2>
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600">Daniel Fernando</h1>
 			</div>
-			<div >
-				<DarkModeButton />
-			</div>
-		</divHead>
-    	<divBody class=" xl:flex xl:flex-auto xl:my-4 xl:justify-between">
-			<div class="flex flex-col justify-around items-stretch ml-1 space-y-5 xl:w-2/5">
-				<h2 class="text-lg sm:text-xl md:text-1xl xl:text-3xl font-bold">Developer with experience in design, development and maintenance of full-stack applications.</h2>
-				<p class="text-xs sm:text-sm md:text-base xl:text-lg">I'm from Cali, Colombia. <br><br> I have skills in technologies such as JavaScript, HTML and CSS. I have also worked with Tailwind and Bootstrap, React and TypeScript. I have 1 year of experience in full-stack development, primarily focused on frontend. Some of my interests in technology include areas such as data analysis and cybersecurity. My professional career has equipped me to develop effective, secure and scalable products using Agile framework processes.</p>
-				<div class="flex justify-center xl:self-start xl:flex xl:pl-6 space-x-6 pb-3">
+			<div class="flex self-center lg:flex lg:pl-6 space-x-4 pb-3">
 					<Button title="Contact me" href="https://www.linkedin.com/in/danielcg99/" target="_blank"/>
 					<Button title="Download CV" href="/cv/CV Daniel Fernando.pdf" download="CV Daniel Fernando.pdf"/>
 				</div>
+			<div class="flex ">
+				<DarkModeButton />
 			</div>
-			<div class="h-full xl:h-full flex content-center items-stretch xl:isolate xl:relative xl:w-7/12 p-6 justify-center">
-				<div class="h-full w-8/12 grid grid-rows-2 grid-cols-2 justify-items-center justify-center xl:h-full">
-					<Card polygon="p1" mt="" txt="Get this template" link="https://github.com/mrpotato42/Portfolio/tree/new-version"/>
-					<Card polygon="p2" mt="" txt="Some books..." link="/404"/>
-					<Card polygon="p3" mt="" txt="Look, my gallery" link="https://www.instagram.com/44gatosenlaterraza/"/>
-					<Card polygon="p4" mt="" txt="Get to know me" link="/404"/>
+		</divHead>
+    	<divBody class="w-full grid auto-rows-[192px] grid-cols-6 gap-4 place-items-center">
+			<div class="col-span-3 lg:row-span-1 lg:col-span-1 text-center">
+				<h1 class="text-2xl sm:text-xl md:text-1xl lg:text-5xl font-bold">+1</h1>
+				<h1 class="text-xs sm:text-sm md:text-base lg:text-md">years of experience</h1>
+			</div>
+			<div class="col-span-3 lg:row-span-1 lg:col-span-1 text-center">
+				<h1 class="text-xs sm:text-sm md:text-base lg:text-md">From</h1>
+				<h1 class="text-2xl sm:text-xl md:text-1xl lg:text-3xl font-bold">Colombia</h1>
+			</div>
+			<div class="col-start-1 row-start-3 col-span-6 lg:col-start-4 lg:col-span-3 lg:row-span-2 h-full grid grid-cols-2 isolate relative p-6">
+							<!-- Ejemplo 1: Tarjeta inclinada hacia atrás -->
+				<div class="flex flex-col items-center gap-4">
+					<PerspectiveShape
+					width={150}
+					height={150}
+					rotationX={25}
+					rotationY={-15}
+					className="card bg-primary text-primary-content shadow-xl"
+					>
+					
+					</PerspectiveShape>
 				</div>
+
+				<!-- Ejemplo 2: Efecto de "portada de libro" flotante -->
+				<div class="flex flex-col items-center gap-4">
+					<PerspectiveShape
+					width={200}
+					height={190}
+					perspective={250}
+					rotationY={35}
+					className="rounded-lg overflow-hidden shadow-2xl"
+					>
+					<img src="images/window.jpg" alt="Portada" class="w-full h-full object-cover" />
+					</PerspectiveShape>
+				</div>
+
+				<!-- Ejemplo 3: Polígono rectangular sesgado (skew) -->
+				<div class="flex flex-col items-center gap-4 ">
+					<PerspectiveShape
+					width={100}
+					height={100}
+					perspective={0}
+					skewX={-20}
+					className="bg-accent flex justify-center items-center font-black text-3xl text-accent-content "
+					>
+					SKEW
+					</PerspectiveShape>
+				</div>
+				<div class="flex flex-col items-center gap-4">
+					<PerspectiveShape
+					width={150}
+					height={190}
+					rotationX={25}
+					rotationY={-15}
+					className="card bg-primary text-primary-content shadow-xl"
+					>
+					
+					</PerspectiveShape>
+				</div>
+			</div>
+			<div class="col-span-6 lg:row-span-1 lg:col-span-3 ml-1 ">
+				<p class="text-md sm:text-sm md:text-base lg:text-lg">I have skills in technologies such as JavaScript, HTML and CSS. I have also worked with Tailwind and Bootstrap, React and TypeScript. I have 1 year of experience in full-stack development, primarily focused on frontend. Some of my interests in technology include areas such as data analysis and cybersecurity. My professional career has equipped me to develop effective, secure and scalable products using Agile framework processes.</p>
+
 			</div>
 		</divBody>
 	</main>
