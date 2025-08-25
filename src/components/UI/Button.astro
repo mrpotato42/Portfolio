@@ -1,5 +1,16 @@
 ---
-const { title, href = '#', download = '', target='' } = Astro.props
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'a'> {
+  title: string;
+  href?: string;
+  download?: string;
+  target?: string;
+}
+
+const { title, href = '#', download: rawDownload, target: rawTarget } = Astro.props;
+const download = rawDownload || null;
+const target = rawTarget || null;
 ---
 
 <a
