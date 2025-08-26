@@ -1,54 +1,65 @@
-# Astro Starter Kit: Basics
+# ¡Hola! Soy [Tu Nombre] 👋 - Mi Portafolio Web
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Banner o Screenshot Principal del Portafolio](https://via.placeholder.com/1200x600.png?text=Reemplázame+con+una+captura+de+tu+sitio)
+*<p align="center">Un vistazo a mi rincón digital, construido con tecnologías modernas y un enfoque en el rendimiento.</p>*
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<p align="center">
+  <a href="[mrpotatoprm.netlify.app]">
+    <strong>Visitar el Sitio en Vivo 🚀</strong>
+  </a>
+</p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📌 Acerca de este Proyecto
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Bienvenido/a a mi portafolio personal. Este proyecto es más que una simple colección de mis trabajos; es una demostración de mis habilidades como desarrollador frontend, mi pasión por la tecnología y mi atención al detalle.
 
-## 🚀 Project Structure
+Fue desarrollado desde cero con un stack moderno, priorizando la **velocidad**, la **escalabilidad** y una **experiencia de usuario impecable**. Cada componente, animación y layout fue cuidadosamente diseñado para ser tanto funcional como estéticamente agradable.
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características Principales
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+*   **⚡️ Rendimiento Excepcional:** Construido con [Astro](https://astro.build/), que envía cero JavaScript al navegador por defecto, garantizando tiempos de carga casi instantáneos.
+*   **🎨 Diseño Moderno y Responsivo:** Totalmente adaptado a cualquier dispositivo, desde móviles hasta pantallas de escritorio, utilizando [TailwindCSS](https://tailwindcss.com/) y [DaisyUI](https://daisyui.com/).
+*   **🌓 Tema Claro y Oscuro:** Incluye un selector de tema para adaptarse a las preferencias del usuario, cortesía de la configuración de temas de DaisyUI.
+*   **💪 Tipado Estricto:** Desarrollado con [TypeScript](https://www.typescriptlang.org/) para un código más robusto, escalable y libre de errores.
+*   **🌌 Animaciones Sutiles:** Transiciones y efectos implementados con CSS para una navegación fluida y atractiva.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Stack Tecnológico
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Este portafolio fue construido con algunas de las herramientas más innovadoras del ecosistema frontend.
 
-Any static assets, like images, can be placed in the `public/` directory.
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)
 
-## 🧞 Commands
+## 🔧 Instalación y Desarrollo Local
 
-All commands are run from the root of the project, from a terminal:
+¿Quieres ejecutar este proyecto en tu máquina local? ¡Es muy fácil!
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1.  **Clona el repositorio:**
+    ```bash
+    git clone https://github.com/mrpotato42/Portfolio.git
+    ```
 
-## 👀 Want to learn more?
+2.  **Navega al directorio del proyecto:**
+    ```bash
+    cd Portfolio
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3.  **Instala las dependencias:**
+    (Se recomienda usar `pnpm` o `npm`)
+    ```bash
+    npm install
+    ```
+
+4.  **Inicia el servidor de desarrollo:**
+    ```bash
+    npm run potato
+    ```
+
+¡Listo! Abre [http://localhost:4321](http://localhost:4321) en tu navegador para ver el proyecto en acción.
+
+## 📜 Scripts Disponibles
+
+*   `npm run potato`: Inicia el servidor de desarrollo con Hot-Module-Reloading (HMR).
+*   `npm run build`: Compila el proyecto para producción en el directorio `dist/`.
+*   `npm run preview`: Inicia un servidor local para previsualizar la build de producción.
+
+---
