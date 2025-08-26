@@ -22,7 +22,7 @@ Fue desarrollado desde cero con un stack moderno, priorizando la **velocidad**, 
 
 Este portafolio fue construido con las siguientes tecnologías:
 
-<p align="center">![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)    ![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)</ṕ>
+<p align="center"> ![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)    ![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)</p>
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
