@@ -2,31 +2,32 @@
 import type { HTMLAttributes } from 'astro/types';
 
 export interface Props extends HTMLAttributes<'div'> {
-  // --- Dimensiones ---
   width?: number | string;
   height?: number | string;
-  // --- Perspectiva ---
   perspective?: number; // En píxeles. 0 para desactivar.
   perspectiveOrigin?: string; // Ej: 'center', 'top right', '50% 50%'
-  // --- Transformaciones---
   rotationX?: number; // Rotación en grados
   rotationY?: number; // Rotación en grados
   rotationZ?: number; // Rotación en grados
   scale?: number; // Escala (1 = 100%, 1.5 = 150%)
+  href?: string; // URL para el enlace
 }
 
 const {
-  width = '100%',
-  height = '100%',
+  width = '90%',
+  height,
   perspective = 1000,
   perspectiveOrigin = 'center',
   rotationX = 0,
   rotationY = 0,
   rotationZ = 0,
   scale = 1,
+  href: rawHref = "404",
   class: className,
   ...rest
 } = Astro.props;
+
+const href = rawHref || null;
 
 const transformStyle = {
   transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
@@ -35,17 +36,18 @@ const transformStyle = {
 const containerStyle = {
   perspective: perspective > 0 ? `${perspective}px` : 'none',
   'perspective-origin': perspectiveOrigin,
-  width: typeof width === 'number' ? `${width}px` : width,
-  height: typeof height === 'number' ? `${height}px` : height,
+  width,
+  height: typeof height === 'number' ? `md:${height}px` : height,
+
 };
 ---
 
 <div
   style={containerStyle}
-  class={'transform-style-3d hover:scale-[1.33] transition-transform duration-[350ms] hover:z-50'}
+  class={'hover:scale-[1.30] duration-[350ms] hover:z-50 flex  justify-center items-center w-full h-full '}
 >
-  <div class:list={['w-full h-full rounded-lg overflow-hidden shadow-xl', className]} style={transformStyle} {...rest}>
-    <a href="404">
+  <div class:list={['w-full h-full rounded-lg overflow-hidden  shadow-xl', className]} style={transformStyle} {...rest}>
+    <a href={href}>
       <slot />
     </a>
   </div>
