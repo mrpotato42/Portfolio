@@ -3,7 +3,7 @@
 *<p align="center">A glimpse into my digital corner, built with modern technologies and a focus on performance.</p>*
 
 <p align="center">
-  <a href="mrpotatoprm.netlify.app">
+  <a href="https://mrpotatoprm.netlify.app/">
     <strong>Visit the site 🚀</strong>
   </a>
 </p>
