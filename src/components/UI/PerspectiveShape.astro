@@ -22,12 +22,12 @@ const {
   rotationY = 0,
   rotationZ = 0,
   scale = 1,
-  href: rawHref = "404",
+  href: rawHref,
   class: className,
   ...rest
 } = Astro.props;
 
-const href = rawHref || null;
+const href = rawHref || "404";
 
 const transformStyle = {
   transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
