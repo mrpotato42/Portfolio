@@ -1,13 +1,15 @@
-# ¡Hola! Soy [Tu Nombre] 👋 - Mi Portafolio Web
+# ¡Hola! Soy Daniel 👋 - Mi Portafolio Web
 
-![Banner o Screenshot Principal del Portafolio](https://via.placeholder.com/1200x600.png?text=Reemplázame+con+una+captura+de+tu+sitio)
 *<p align="center">Un vistazo a mi rincón digital, construido con tecnologías modernas y un enfoque en el rendimiento.</p>*
 
 <p align="center">
   <a href="[mrpotatoprm.netlify.app]">
-    <strong>Visitar el Sitio en Vivo 🚀</strong>
+    <strong>Visitar el Sitio 🚀</strong>
   </a>
 </p>
+
+
+
 
 ## 📌 Acerca de este Proyecto
 
@@ -15,19 +17,17 @@ Bienvenido/a a mi portafolio personal. Este proyecto es más que una simple cole
 
 Fue desarrollado desde cero con un stack moderno, priorizando la **velocidad**, la **escalabilidad** y una **experiencia de usuario impecable**. Cada componente, animación y layout fue cuidadosamente diseñado para ser tanto funcional como estéticamente agradable.
 
-## ✨ Características Principales
 
-*   **⚡️ Rendimiento Excepcional:** Construido con [Astro](https://astro.build/), que envía cero JavaScript al navegador por defecto, garantizando tiempos de carga casi instantáneos.
-*   **🎨 Diseño Moderno y Responsivo:** Totalmente adaptado a cualquier dispositivo, desde móviles hasta pantallas de escritorio, utilizando [TailwindCSS](https://tailwindcss.com/) y [DaisyUI](https://daisyui.com/).
-*   **🌓 Tema Claro y Oscuro:** Incluye un selector de tema para adaptarse a las preferencias del usuario, cortesía de la configuración de temas de DaisyUI.
-*   **💪 Tipado Estricto:** Desarrollado con [TypeScript](https://www.typescriptlang.org/) para un código más robusto, escalable y libre de errores.
-*   **🌌 Animaciones Sutiles:** Transiciones y efectos implementados con CSS para una navegación fluida y atractiva.
+
 
 ## 🛠️ Stack Tecnológico
 
-Este portafolio fue construido con algunas de las herramientas más innovadoras del ecosistema frontend.
+Este portafolio fue construido con las siguientes tecnologías:
 
-![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)  ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)    ![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)
+
+
+
 
 ## 🔧 Instalación y Desarrollo Local
 
@@ -55,11 +55,5 @@ Este portafolio fue construido con algunas de las herramientas más innovadoras 
     ```
 
 ¡Listo! Abre [http://localhost:4321](http://localhost:4321) en tu navegador para ver el proyecto en acción.
-
-## 📜 Scripts Disponibles
-
-*   `npm run potato`: Inicia el servidor de desarrollo con Hot-Module-Reloading (HMR).
-*   `npm run build`: Compila el proyecto para producción en el directorio `dist/`.
-*   `npm run preview`: Inicia un servidor local para previsualizar la build de producción.
 
 ---
