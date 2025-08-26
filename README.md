@@ -1,57 +1,48 @@
-# ¡Hola! Soy Daniel 👋 - Mi Portafolio Web
+<h1 align="center"> Hello! I'm Daniel 👋 - My Web Portfolio </h1>
 
-*<p align="center">Un vistazo a mi rincón digital, construido con tecnologías modernas y un enfoque en el rendimiento.</p>*
+*<p align="center">A glimpse into my digital corner, built with modern technologies and a focus on performance.</p>*
 
 <p align="center">
   <a href="[mrpotatoprm.netlify.app]">
-    <strong>Visitar el Sitio 🚀</strong>
+    <strong>Visit the site 🚀</strong>
   </a>
 </p>
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-## 📌 Acerca de este Proyecto
+## 🛠️ Tech stack
 
-Bienvenido/a a mi portafolio personal. Este proyecto es más que una simple colección de mis trabajos; es una demostración de mis habilidades como desarrollador frontend, mi pasión por la tecnología y mi atención al detalle.
+This portfolio was built with the following technologies:
 
-Fue desarrollado desde cero con un stack moderno, priorizando la **velocidad**, la **escalabilidad** y una **experiencia de usuario impecable**. Cada componente, animación y layout fue cuidadosamente diseñado para ser tanto funcional como estéticamente agradable.
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
-## 🛠️ Stack Tecnológico
-
-Este portafolio fue construido con las siguientes tecnologías:
-| |
-|:--:|
-|![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white) | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) | ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | ![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)|
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![DaisyUI](https://img.shields.io/badge/DaisyUI-152734?style=for-the-badge&logo=daisyui&logoColor=white)
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
-## 🔧 Instalación y Desarrollo Local
+## 🔧 Installation and local development
 
-¿Quieres ejecutar este proyecto en tu máquina local? ¡Es muy fácil!
+Do you want to run this project on your local machine? It's very easy!
 
-1.  **Clona el repositorio:**
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/mrpotato42/Portfolio.git
     ```
 
-2.  **Navega al directorio del proyecto:**
+2.  **Navigate to the project directory:**
     ```bash
     cd Portfolio
     ```
 
-3.  **Instala las dependencias:**
-    (Se recomienda usar `pnpm` o `npm`)
+3.  **Install the dependencies:**
+    (`pnpm` or `npm` is recommended)
     ```bash
     npm install
     ```
 
-4.  **Inicia el servidor de desarrollo:**
+4.  **Start the development server:**
     ```bash
     npm run potato
     ```
 
-¡Listo! Abre [http://localhost:4321](http://localhost:4321) en tu navegador para ver el proyecto en acción.
+All set! Open [http://localhost:4321](http://localhost:4321) in your browser to see the project in action.
 
 ---
