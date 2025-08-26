@@ -1,0 +1,54 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'div'> {
+  width?: number | string;
+  height?: number | string;
+  perspective?: number; // En píxeles. 0 para desactivar.
+  perspectiveOrigin?: string; // Ej: 'center', 'top right', '50% 50%'
+  rotationX?: number; // Rotación en grados
+  rotationY?: number; // Rotación en grados
+  rotationZ?: number; // Rotación en grados
+  scale?: number; // Escala (1 = 100%, 1.5 = 150%)
+  href?: string; // URL para el enlace
+}
+
+const {
+  width = '90%',
+  height,
+  perspective = 1000,
+  perspectiveOrigin = 'center',
+  rotationX = 0,
+  rotationY = 0,
+  rotationZ = 0,
+  scale = 1,
+  href: rawHref,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const href = rawHref || "404";
+
+const transformStyle = {
+  transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
+};
+
+const containerStyle = {
+  perspective: perspective > 0 ? `${perspective}px` : 'none',
+  'perspective-origin': perspectiveOrigin,
+  width,
+  height: typeof height === 'number' ? `md:${height}px` : height,
+
+};
+---
+
+<div
+  style={containerStyle}
+  class={'hover:scale-[1.30] duration-[350ms] hover:z-50 flex  justify-center items-center w-full h-full '}
+>
+  <div class:list={['w-full h-full rounded-lg overflow-hidden  shadow-xl', className]} style={transformStyle} {...rest}>
+    <a href={href}>
+      <slot />
+    </a>
+  </div>
+</div>

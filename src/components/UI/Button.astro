@@ -1,11 +1,29 @@
 ---
-const { title, href = '#', download = '', target='' } = Astro.props
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'a'> {
+  title: string;
+  href?: string;
+  download?: string;
+  target?: string;
+  class?: string;
+}
+
+const { title, 
+  href = '#', 
+  download: rawDownload, 
+  target: rawTarget,
+  class: className,
+} = Astro.props;
+
+const download = rawDownload || null;
+const target = rawTarget || null;
 ---
 
 <a
   href={href}
   download={download}
   target={target}
-  class='flex-row w-24 sm:w-fit text-xs sm:text-sm btn btn-outline dark:btn-primary dark:bg-transparent bg-indigo-600 hover:scale-110 hover:bg-indigo-300'>
+  class:list={[className, 'flex-row w-24 sm:w-fit text-xs/3 sm:text-sm border-1 border-black btn btn-sm sm:btn-sm dark:btn-primary dark:text-black dark:border-white bg-transparent dark:bg-indigo-300 hover:scale-110 hover:bg-indigo-600 hover:text-white']}>
   {title}
 </a>
