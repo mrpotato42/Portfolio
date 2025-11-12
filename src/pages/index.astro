@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
 import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
+import ModalTrigger from "../components/UI/ModalTrigger.tsx";
 ---
 
 <Base>
@@ -95,13 +96,15 @@ import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
             />
           </PerspectiveShape>
 
-          <PerspectiveShape height={190} rotationX={-30} rotationY={30} >
-            <img
-              src="images/projects.jpg"
-              alt="projects"
-              class="w-full h-full object-cover"
-            />
-          </PerspectiveShape>
+          <ModalTrigger client:load>
+            <PerspectiveShape height={190} rotationX={-30} rotationY={30} href="modal">
+                <img
+                src="images/projects.jpg"
+                alt="projects"
+                class="w-full h-full object-cover"
+                />
+            </PerspectiveShape>
+          </ModalTrigger>
         </div>
       </div>
     </divBody>

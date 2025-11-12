@@ -27,7 +27,13 @@ const {
   ...rest
 } = Astro.props;
 
-const href = rawHref || "404";
+const href: string = (() => {
+  if(rawHref=="modal"){
+    return "#modal"
+  }else{
+    return rawHref || "404";
+  }
+})();
 
 const transformStyle = {
   transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
@@ -47,7 +53,7 @@ const containerStyle = {
   class={'hover:scale-[1.30] duration-[350ms] hover:z-50 flex  justify-center items-center w-full h-full '}
 >
   <div class:list={['w-full h-full rounded-lg overflow-hidden  shadow-xl', className]} style={transformStyle} {...rest}>
-    <a href={href}>
+    <a href={href} >
       <slot />
     </a>
   </div>
