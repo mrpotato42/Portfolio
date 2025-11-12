@@ -27,6 +27,8 @@ const {
   ...rest
 } = Astro.props;
 
+
+
 const href: string = (() => {
   if(rawHref=="modal"){
     return "#modal"
@@ -36,7 +38,8 @@ const href: string = (() => {
 })();
 
 const transformStyle = {
-  transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
+  '--base-transform': `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
+  transform: 'var(--base-transform)'
 };
 
 const containerStyle = {
@@ -50,11 +53,42 @@ const containerStyle = {
 
 <div
   style={containerStyle}
-  class={'hover:scale-[1.30] duration-[350ms] hover:z-50 flex  justify-center items-center w-full h-full '}
+  class={'ps-container duration-[350ms] hover:z-50 flex justify-center items-center w-full h-full'}
 >
-  <div class:list={['w-full h-full rounded-lg overflow-hidden  shadow-xl', className]} style={transformStyle} {...rest}>
-    <a href={href} >
+  <div class:list={['ps-inner w-full h-full rounded-lg overflow-hidden shadow-xl', className]} style={transformStyle} {...rest}>
+    <a href={href} class="ps-link">
       <slot />
     </a>
   </div>
 </div>
+
+<style>
+  @keyframes ps-pulse {
+    0%, 100% { transform: var(--base-transform) translateZ(0) scale(1); opacity: 1; }
+    50% { transform: var(--base-transform) translateZ(12px) scale(1.2); opacity: 1; }
+  }
+  .ps-inner.ps-anim { animation: ps-pulse 900ms ease-in-out infinite; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.ps-container').forEach((container) => {
+      const inner = container.querySelector('.ps-inner');
+      if (!inner) return;
+      let stopAfter = false;
+      container.addEventListener('mouseenter', () => {
+        inner.classList.add('ps-anim');
+        stopAfter = false;
+      });
+      container.addEventListener('mouseleave', () => {
+        stopAfter = true;
+      });
+      inner.addEventListener('animationiteration', () => {
+        if (stopAfter) {
+          inner.classList.remove('ps-anim');
+          stopAfter = false;
+        }
+      });
+    });
+  });
+</script>
