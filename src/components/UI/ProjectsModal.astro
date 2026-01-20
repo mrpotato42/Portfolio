@@ -11,28 +11,28 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    slug: 'proyecto-1',
-    title: 'Proyecto 1',
+    slug: 'pr1',
+    title: '',
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=500',
-    description: 'Descripción del proyecto 1.',
+    description: '',
   },
   {
-    slug: 'proyecto-2',
-    title: 'Proyecto 2',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500',
-    description: 'Descripción del proyecto 2.',
+    slug: 'k4pital',
+    title: 'K4PITAL',
+    image: 'images/project2.png',
+    description: 'AI-powered app to manage your finances',
   },
   {
-    slug: 'proyecto-3',
-    title: 'Proyecto 3',
+    slug: 'p3',
+    title: '',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500',
-    description: 'Descripción del proyecto 3.',
+    description: '',
   },
   {
-    slug: 'proyecto-4',
-    title: 'Proyecto 4',
+    slug: 'p4',
+    title: '',
     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=500',
-    description: 'Descripción del proyecto 4.',
+    description: '',
   }
 ];
 
@@ -51,26 +51,26 @@ const dialogId = `modal-dialog-${Math.random().toString(36).slice(2, 9)}`;
 
 <!-- Modal Dialog -->
 <dialog id={dialogId} class="modal">
-  <div class="relative w-full max-w-4xl max-h-[80vh] backdrop-blur-xl rounded-3xl p-8 overflow-hidden shadow-2xl">
-    <div class="flex justify-between items-center mb-8">
-      <h3 class="font-bold text-3xl bg-clip-text text-white/70 dark:text-white">
+  <div class="relative w-[90vw] max-w-4xl max-h-[50vh] sm:max-h-[60vh] lg:max-h-[80vh] backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 overflow-hidden shadow-2xl">
+    <div class="flex justify-between items-center mb-4 sm:mb-6 lg:mb-8">
+      <h3 class="font-bold text-xl sm:text-2xl lg:text-3xl bg-clip-text text-white/70 dark:text-white">
         Projects
       </h3>
       <button
-        class="btn-modal-close btn btn-circle btn-ghost text-white/50 hover:text-white dark:hover:bg-white/20 transition-all duration-300"
+        class="btn-modal-close btn btn-circle btn-ghost btn-sm sm:btn-md text-white/50 hover:text-white dark:hover:bg-white/20 transition-all duration-300"
         aria-label="Cerrar"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
 
     <div class="">
-      <div class="flex gap-6 w-max animate-infinite-scroll hover:pause">
+      <div class="flex gap-3 sm:gap-4 lg:gap-6 w-max animate-infinite-scroll hover:pause">
         {allProjects.map((project, index) => (
           <div
-            class="project-card group relative w-72 h-96 shrink-0 rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105 hover:pause hover:-translate-y-2"
+            class="project-card group relative w-40 h-56 sm:w-56 sm:h-72 lg:w-72 lg:h-96 shrink-0 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105 hover:pause hover:-translate-y-2"
           >
             <!-- Image Background -->
             <div class="absolute inset-0">

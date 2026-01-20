@@ -10,6 +10,10 @@
     --color-dark-text: #ffffff;
     --color-dark-foreground: #21232C;
     --color-dark-background: #151618;
+
+    /* Puntos de quiebre para pantallas grandes */
+    --breakpoint-3xl: 1600px;
+    --breakpoint-4xl: 1920px;
 }
 
 /* ========================================
@@ -22,14 +26,14 @@
     /* Contenedor exterior - maneja perspectiva y hover */
     .perspective-container {
         @apply flex justify-center items-center;
-        @apply w-full h-full;
+        @apply max-w-full max-h-full;
         @apply transition-transform duration-[350ms] ease-out;
         @apply hover:scale-[1.30] hover:z-50;
     }
 
     /* Tarjeta interior - contenido y estilos visuales */
     .perspective-card {
-        @apply w-full h-full;
+        @apply max-w-full max-h-full;
         @apply rounded-lg overflow-hidden;
         @apply shadow-xl;
     }
