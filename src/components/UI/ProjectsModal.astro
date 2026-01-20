@@ -1,0 +1,129 @@
+---
+import Button from './Button.astro';
+
+// Define project interface and data
+interface Project {
+  slug: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
+const PROJECTS: Project[] = [
+  {
+    slug: 'proyecto-1',
+    title: 'Proyecto 1',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=500',
+    description: 'Descripción del proyecto 1.',
+  },
+  {
+    slug: 'proyecto-2',
+    title: 'Proyecto 2',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500',
+    description: 'Descripción del proyecto 2.',
+  },
+  {
+    slug: 'proyecto-3',
+    title: 'Proyecto 3',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500',
+    description: 'Descripción del proyecto 3.',
+  },
+  {
+    slug: 'proyecto-4',
+    title: 'Proyecto 4',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=500',
+    description: 'Descripción del proyecto 4.',
+  }
+];
+
+// Duplicate for infinite scroll effect
+const allProjects = [...PROJECTS, ...PROJECTS];
+
+// Generate unique IDs for this component instance
+const triggerId = `modal-trigger-${Math.random().toString(36).slice(2, 9)}`;
+const dialogId = `modal-dialog-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<!-- Trigger: wraps the slot content and opens the modal on click -->
+<div id={triggerId} class="cursor-pointer">
+  <slot />
+</div>
+
+<!-- Modal Dialog -->
+<dialog id={dialogId} class="modal">
+  <div class="relative w-full max-w-4xl max-h-[80vh] backdrop-blur-xl rounded-3xl p-8 overflow-hidden shadow-2xl">
+    <div class="flex justify-between items-center mb-8">
+      <h3 class="font-bold text-3xl bg-clip-text text-white/70 dark:text-white">
+        Projects
+      </h3>
+      <button
+        class="btn-modal-close btn btn-circle btn-ghost text-white/50 hover:text-white dark:hover:bg-white/20 transition-all duration-300"
+        aria-label="Cerrar"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="">
+      <div class="flex gap-6 w-max animate-infinite-scroll hover:pause">
+        {allProjects.map((project, index) => (
+          <div
+            class="project-card group relative w-72 h-96 shrink-0 rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105 hover:pause hover:-translate-y-2"
+          >
+            <!-- Image Background -->
+            <div class="absolute inset-0">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
+            </div>
+
+            <!-- Content -->
+            <div class="absolute inset-0 p-6 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <h4 class="text-2xl font-bold text-white mb-2">{project.title}</h4>
+              <p class="text-white/70 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                {project.description}
+              </p>
+              <div class="mt-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                <Button
+                  title="View Details"
+                  href={"404"}
+                  class="btn-portfolio-details w-fit! bg-white/10! border-white/20! text-white! hover:bg-white/20!"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script define:vars={{ triggerId, dialogId }}>
+  // Get elements using the unique IDs
+  const trigger = document.getElementById(triggerId);
+  const dialog = document.getElementById(dialogId);
+  const closeBtn = dialog?.querySelector('.btn-modal-close');
+
+  // Open modal on trigger click
+  trigger?.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog?.showModal();
+  });
+
+  // Close modal on button click
+  closeBtn?.addEventListener('click', () => {
+    dialog?.close();
+  });
+
+  // Close modal on backdrop click
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+    }
+  });
+</script>

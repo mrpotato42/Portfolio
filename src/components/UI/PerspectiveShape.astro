@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-export interface Props extends HTMLAttributes<'div'> {
+export interface Props extends HTMLAttributes<"div"> {
   width?: number | string;
   height?: number | string;
   perspective?: number; // En píxeles. 0 para desactivar.
@@ -14,23 +14,21 @@ export interface Props extends HTMLAttributes<'div'> {
 }
 
 const {
-  width = '90%',
+  width = "90%",
   height,
   perspective = 1000,
-  perspectiveOrigin = 'center',
+  perspectiveOrigin = "center",
   rotationX = 0,
   rotationY = 0,
   rotationZ = 0,
   scale = 1,
   href: rawHref,
-  class: className,
-  ...rest
 } = Astro.props;
 
 const href: string = (() => {
-  if(rawHref=="modal"){
-    return "#modal"
-  }else{
+  if (rawHref == "modal") {
+    return "#modal";
+  } else {
     return rawHref || "404";
   }
 })();
@@ -40,20 +38,16 @@ const transformStyle = {
 };
 
 const containerStyle = {
-  perspective: perspective > 0 ? `${perspective}px` : 'none',
-  'perspective-origin': perspectiveOrigin,
+  perspective: perspective > 0 ? `${perspective}px` : "none",
+  "perspective-origin": perspectiveOrigin,
   width,
-  height: typeof height === 'number' ? `md:${height}px` : height,
-
+  height: typeof height === "number" ? `md:${height}px` : height,
 };
 ---
 
-<div
-  style={containerStyle}
-  class={'hover:scale-[1.30] duration-[350ms] hover:z-50 flex  justify-center items-center w-full h-full '}
->
-  <div class:list={['w-full h-full rounded-lg overflow-hidden  shadow-xl', className]} style={transformStyle} {...rest}>
-    <a href={href} >
+<div style={containerStyle} class="perspective-container">
+  <div class="perspective-card" style={transformStyle}>
+    <a href={href} class="perspective-link">
       <slot />
     </a>
   </div>

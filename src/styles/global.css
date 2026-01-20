@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --background-image-custom: linear-gradient(to top, #1A2833 40%, transparent), url("/images/background.webp");
+
+    /* Colores personalizados para modo oscuro */
+    --color-dark-text: #ffffff;
+    --color-dark-foreground: #21232C;
+    --color-dark-background: #151618;
+}
+
+/* ========================================
+   PERSPECTIVE SHAPE CARD
+   Componente de tarjeta con efecto 3D
+   para redirecciones del portafolio
+   ======================================== */
+@layer components {
+
+    /* Contenedor exterior - maneja perspectiva y hover */
+    .perspective-container {
+        @apply flex justify-center items-center;
+        @apply w-full h-full;
+        @apply transition-transform duration-[350ms] ease-out;
+        @apply hover:scale-[1.30] hover:z-50;
+    }
+
+    /* Tarjeta interior - contenido y estilos visuales */
+    .perspective-card {
+        @apply w-full h-full;
+        @apply rounded-lg overflow-hidden;
+        @apply shadow-xl;
+    }
+
+    /* Enlace dentro de la tarjeta */
+    .perspective-link {
+        @apply block w-full h-full;
+    }
+
+    .btn-portfolio-details {
+        @apply btn btn-sm sm:btn-sm;
+        @apply flex-row w-24 sm:w-fit text-xs/3 sm:text-sm;
+        @apply border rounded-2xl border-black bg-transparent text-black;
+        @apply transition-all duration-300 hover:scale-110 hover:bg-indigo-600 hover:text-white;
+
+        /* Dark Mode overrides */
+        @apply dark:border-white dark:bg-indigo-300 dark:text-black;
+        @apply dark:hover:bg-indigo-600 dark:hover:text-white;
+    }
+
+    /* Botón general del portafolio */
+    .btn-portfolio {
+        @apply btn btn-sm sm:btn-sm;
+        @apply flex-row w-24 sm:w-fit text-xs/3 sm:text-sm;
+        @apply border border-black bg-transparent text-black;
+        @apply transition-all duration-300 hover:scale-110 hover:bg-indigo-600 hover:text-white;
+
+        /* Dark Mode overrides */
+        @apply dark:border-white dark:bg-indigo-300 dark:text-black;
+        @apply dark:hover:bg-indigo-600 dark:hover:text-white;
+    }
+}
+
+/* ========================================
+   UTILIDADES PERSONALIZADAS
+   ======================================== */
+@layer utilities {
+
+    /* --- Estilos Base (Mobile First) --- */
+
+
+    /* Preservar transformaciones 3D */
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
+
+    /* Proyectos - Scroll Infinito */
+    .animate-infinite-scroll {
+        animation: infinite-scroll 40s linear infinite;
+    }
+
+    .pause {
+        animation-play-state: paused;
+    }
+
+    @keyframes infinite-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(calc(-50% - 12px));
+            /* -50% because we duplicated the items, -12px to account for half the gap */
+        }
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Modal - Fast close transition only */
+    dialog.modal {
+        opacity: 0;
+        transition: opacity 50ms ease-out, display 150ms ease-out allow-discrete, overlay 150ms ease-out allow-discrete;
+    }
+
+    dialog.modal[open] {
+        opacity: 1;
+        transition: none;
+        /* Opening is instant */
+    }
+
+    dialog.modal::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: opacity 150ms ease-out, display 150ms ease-out allow-discrete, overlay 150ms ease-out allow-discrete;
+    }
+
+    dialog.modal[open]::backdrop {
+        opacity: 1;
+        transition: none;
+        /* Opening is instant */
+    }
+}

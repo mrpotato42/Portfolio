@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
 import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
-import ModalTrigger from "../components/UI/ModalTrigger.tsx";
+import ProjectsModal from "../components/UI/ProjectsModal.astro";
 ---
 
 <Base>
@@ -21,7 +21,7 @@ import ModalTrigger from "../components/UI/ModalTrigger.tsx";
           Daniel Fernando
         </h1>
       </div>
-      <div class="h-1/4 sm:flex sm:flex-row-reverse gap-4  ">
+      <div class="h-1/4 sm:flex sm:flex-row-reverse gap-4">
         <div class="flex justify-end">
           <DarkModeButton />
         </div>
@@ -29,7 +29,7 @@ import ModalTrigger from "../components/UI/ModalTrigger.tsx";
           title="Download CV"
           href="/cv/CV Daniel Fernando.pdf"
           download="CV Daniel Fernando.pdf"
-          class="order-first mt-7 mb-3 sm:mt-0 sm:mb-0"
+          class="order-first mt-7 mb-3 sm:mt-0 sm:mb-0 btn-portfolio"
         />
       </div>
     </divHead>
@@ -71,7 +71,12 @@ import ModalTrigger from "../components/UI/ModalTrigger.tsx";
         <div
           class="grid grid-cols-2 grid-rows-2 gap-4 col-span-2 w-full max-h-[350px]"
         >
-          <PerspectiveShape height={190} rotationX={30} rotationY={-30} href="https://www.linkedin.com/in/danielcg99/">
+          <PerspectiveShape
+            height={190}
+            rotationX={30}
+            rotationY={-30}
+            href="https://www.linkedin.com/in/danielcg99/"
+          >
             <img
               src="images/profile.jpg"
               alt="profile"
@@ -79,7 +84,12 @@ import ModalTrigger from "../components/UI/ModalTrigger.tsx";
             />
           </PerspectiveShape>
 
-          <PerspectiveShape height={190} perspective={250} rotationY={35} href="https://www.instagram.com/44gatosenlaterraza/">
+          <PerspectiveShape
+            height={190}
+            perspective={250}
+            rotationY={35}
+            href="https://www.instagram.com/44gatosenlaterraza/"
+          >
             <img
               src="images/window.jpg"
               alt="no terminado"
@@ -87,24 +97,33 @@ import ModalTrigger from "../components/UI/ModalTrigger.tsx";
             />
           </PerspectiveShape>
 
-          <PerspectiveShape height={190} perspective={250} rotationY={-35} href="https://github.com/mrpotato42/Portfolio">
+          <PerspectiveShape
+            height={190}
+            perspective={250}
+            rotationY={-35}
+            href="https://github.com/mrpotato42/Portfolio"
+          >
             <img
               src="images/experience.jpg"
               alt="experience"
               class="w-full h-full object-cover"
-              
             />
           </PerspectiveShape>
 
-          <ModalTrigger client:load>
-            <PerspectiveShape height={190} rotationX={-30} rotationY={30} href="modal">
-                <img
+          <ProjectsModal>
+            <PerspectiveShape
+              height={190}
+              rotationX={-30}
+              rotationY={30}
+              href="modal"
+            >
+              <img
                 src="images/projects.jpg"
                 alt="projects"
                 class="w-full h-full object-cover"
-                />
+              />
             </PerspectiveShape>
-          </ModalTrigger>
+          </ProjectsModal>
         </div>
       </div>
     </divBody>
