@@ -85,59 +85,67 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
         class="flex flex-col justify-center p-5 pl-7 sm:p-10 sm:pl-12 h-full col-start-1 row-start-3 md:col-start-4 lg:col-start-5 md:row-start-1 col-span-full md:row-span-2"
       >
         <div
-          class="grid grid-cols-2 grid-rows-2 gap-4 col-span-2 max-w-[800px] max-h-[350px] 3xl:gap-8 4xl:gap-12 3xl:max-h-[500px] 4xl:max-h-[650px]"
+          class="grid grid-cols-2 grid-rows-2 gap-4 col-span-2 max-w-[800px] 3xl:gap-8 4xl:gap-12"
         >
           <PerspectiveShape
-            height={190}
+            class="aspect-square w-full"
             rotationX={30}
             rotationY={-30}
             href="https://www.linkedin.com/in/danielcg99/"
           >
-            <img
-              src="images/profile.jpg"
-              alt="profile"
-              class="w-full h-full object-cover"
-            />
+            <div class="relative w-full h-full">
+              <img
+                src="images/portfolio.webp"
+                alt="no terminado"
+                class="w-full h-full object-cover brightness-70"
+              />
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span class="text-white text-xl md:text-2xl font-bold z-10 select-none drop-shadow-lg">
+                  Linkedin
+                </span>
+              </div>
+            </div>
           </PerspectiveShape>
 
           <PerspectiveShape
-            height={190}
-            perspective={250}
-            rotationY={35}
-            href="https://www.instagram.com/44gatosenlaterraza/"
-          >
-            <img
-              src="images/window.jpg"
-              alt="no terminado"
-              class="w-full h-full object-cover"
-            />
-          </PerspectiveShape>
-
-          <PerspectiveShape
-            height={190}
+            class="aspect-square w-full"
             perspective={250}
             rotationY={-35}
             href="https://github.com/mrpotato42/Portfolio"
           >
-            <img
-              src="images/experience.jpg"
-              alt="experience"
-              class="w-full h-full object-cover"
-            />
+            <div class="relative w-full h-full">
+              <img
+                src="images/portfolio.webp"
+                alt="no terminado"
+                class="w-full h-full object-cover brightness-70"
+              />
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span class="text-white text-xl md:text-2xl font-bold z-10 select-none drop-shadow-lg">
+                  Github
+                </span>
+              </div>
+            </div>
           </PerspectiveShape>
 
           <ProjectsModal>
             <PerspectiveShape
-              height={190}
+              class="aspect-square w-full"
               rotationX={-30}
               rotationY={30}
               href="modal"
             >
+              <div class="relative w-full h-full">
               <img
-                src="images/projects.jpg"
-                alt="projects"
-                class="w-full h-full object-cover"
+                src="images/portfolio.webp"
+                alt="no terminado"
+                class="w-full h-full object-cover brightness-70"
               />
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span class="text-white text-xl md:text-2xl font-bold  z-10 select-none drop-shadow-lg">
+                  Projects
+                </span>
+              </div>
+            </div>
             </PerspectiveShape>
           </ProjectsModal>
         </div>

@@ -23,6 +23,8 @@ const {
   rotationZ = 0,
   scale = 1,
   href: rawHref,
+  class: className,
+  ...rest
 } = Astro.props;
 
 const href: string = (() => {
@@ -45,7 +47,7 @@ const containerStyle = {
 };
 ---
 
-<div style={containerStyle} class="perspective-container">
+<div style={containerStyle} class:list={["perspective-container", className]} {...rest}>
   <div class="perspective-card" style={transformStyle}>
     <a href={href} class="perspective-link">
       <slot />
