@@ -50,18 +50,9 @@ const containerStyle = {
 };
 ---
 
-<<<<<<< HEAD
-<div
-  style={containerStyle}
-  class={'ps-container duration-[350ms] hover:z-50 flex justify-center items-center w-full h-full'}
->
-  <div class:list={['ps-inner w-full h-full rounded-lg overflow-hidden shadow-xl', className]} style={transformStyle} {...rest}>
-    <a href={href} class="ps-link">
-=======
 <div style={containerStyle} class:list={["perspective-container", className]} {...rest}>
   <div class="perspective-card" style={transformStyle}>
     <a href={href} class="perspective-link">
->>>>>>> de20f46b460d3e28c697c6a343db4babc7e40ff0
       <slot />
     </a>
   </div>
