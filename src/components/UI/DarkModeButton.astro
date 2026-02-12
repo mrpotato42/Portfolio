@@ -13,11 +13,7 @@
     ".dark-mode-button",
   ) as HTMLButtonElement;
 
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
+  if (localStorage.theme === "dark") {
     document.documentElement.classList.add("dark");
     themeSwitchButton.innerHTML = darkIcon;
   } else {
@@ -26,11 +22,7 @@
   }
 
   themeSwitchButton.addEventListener("click", () => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+    if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
       localStorage.theme = "light";
       themeSwitchButton.innerHTML = lightIcon;
