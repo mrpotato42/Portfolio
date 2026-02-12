@@ -1,51 +1,8 @@
----
-import Base from "../layouts/Base.astro";
-import DarkModeButton from "../components/UI/DarkModeButton.astro";
-import Button from "../components/UI/Button.astro";
-import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
-import ProjectsModal from "../components/UI/ProjectsModal.astro";
-import Github from "../components/Icons/Github.astro";
----
-
-<Base>
-  <main
-    class="flex-1 flex flex-col justify-between text-black font-titillium p-6 sm:p-10 lg:p-1 lg:flex-nowrap lg:m-2 dark:text-dark-text"
-  >
-    <divHead class="flex shrink-0 flex-row mb-6 mt-4 justify-between">
-      <div class="flex-col w-full">
-        <h2
-          class="text-xs sm:text-base md:text-xl lg:text-2xl 3xl:text-3xl 4xl:text-4xl ml-1"
-        >
-          Hey, I'm
-        </h2>
-        <h1
-          class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 3xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600"
-        >
-          Daniel Fernando
-        </h1>
-      </div>
-      <div class="h-full flex flex-col items-end sm:flex-row-reverse sm:items-center gap-4">
-        <div class="flex items-center gap-4">
-          <a href="https://github.com/mrpotato42" target="_blank" aria-label="Visit my Github" class="flex items-center justify-center transition-transform hover:scale-110">
-            <Github class="w-7 h-7 text-black dark:text-white" />
-          </a>
-          <div class="flex justify-end">
-            <DarkModeButton />
-          </div>
-        </div>
-        <Button
-        title="Download CV"
-        href="/cv/CV Daniel Fernando.pdf"
-        download="CV Daniel Fernando.pdf"
-        class="sm:order-first mt-2 sm:mt-0 btn-portfolio"
-        />
-      </div>
-    </divHead>
-    <divBody
-      class="flex-1 w-full grid grid-cols-6 lg:grid-cols-7 gap-6 content-center 3xl:gap-8 lg:gap-12 lg:place-content-center lg:content-center"
+<divBody
+      class="w-full grid grid-cols-6 lg:grid-cols-7 gap-3 3xl:gap-8 lg:gap-12 lg:place-content-center lg:flex-1"
     >
       <div
-        class="min-h-24 pb-1 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
+        class="max-h-44 min-h-16 pb-1 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col self-center"
       >
         <h1
           class="text-xl sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl 4xl:text-6xl font-bold"
@@ -59,7 +16,7 @@ import Github from "../components/Icons/Github.astro";
         </h1>
       </div>
       <div
-        class="min-h-24 p-2 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
+        class="max-h-44 min-h-16 p-2 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col self-center"
       >
         <h1
           class="text-xs sm:text-sm md:text-base lg:text-md 3xl:text-lg 4xl:text-xl"
@@ -73,7 +30,7 @@ import Github from "../components/Icons/Github.astro";
         </h1>
       </div>
       <div
-        class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-4 justify-center dark:p-5 pl-1 min-h-32"
+        class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-4 justify-center dark:p-5 pl-1 max-h-44"
       >
         <p
           class="max-h-44 overflow-auto text-md sm:text-base lg:text-lg 3xl:text-xl 4xl:text-2xl"
@@ -92,7 +49,6 @@ import Github from "../components/Icons/Github.astro";
             rotationX={-30}
             rotationY={30}
             href="https://www.linkedin.com/in/danielcg99/"
-            title="LinkedIn"
           >
               <img
                 src="images/1.webp"
@@ -120,7 +76,6 @@ import Github from "../components/Icons/Github.astro";
               rotationX={30}
               rotationY={-30}
               href="modal"
-              title="Projects"
             >
               <img
                 src="images/3.webp"
@@ -132,5 +87,3 @@ import Github from "../components/Icons/Github.astro";
         </div>
       </div>
     </divBody>
-  </main>
-</Base>

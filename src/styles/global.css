@@ -36,6 +36,17 @@
         @apply max-w-full max-h-full;
         @apply rounded-lg overflow-hidden;
         @apply shadow-xl;
+        @apply transition-transform duration-700 ease-in-out;
+        transform: scale(1);
+    }
+
+    .dark .perspective-card {
+        transform: var(--target-transform);
+    }
+
+    /* Reset transform on hover in dark mode to show flat card */
+    .dark .perspective-container:hover .perspective-card {
+        transform: scale(1);
     }
 
     /* Enlace dentro de la tarjeta */
@@ -64,6 +75,18 @@
         /* Dark Mode overrides */
         @apply dark:border-white dark:bg-indigo-300 dark:text-black;
         @apply dark:hover:bg-indigo-600 dark:hover:text-white;
+    }
+
+    /* Título de la tarjeta perspectiva */
+    .perspective-title {
+        @apply absolute -bottom-10 left-0 right-0 flex justify-center;
+        @apply text-xl font-bold text-black dark:text-white;
+        @apply opacity-100 pointer-events-none;
+        @apply lg:opacity-0 lg:transition-opacity lg:duration-300;
+    }
+
+    .group\/card:hover .perspective-title {
+        @apply lg:opacity-100;
     }
 }
 

@@ -11,6 +11,7 @@ export interface Props extends HTMLAttributes<"div"> {
   rotationZ?: number; // Rotación en grados
   scale?: number; // Escala (1 = 100%, 1.5 = 150%)
   href?: string; // URL para el enlace
+  title?: string; // Título de la tarjeta
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   scale = 1,
   href: rawHref,
   class: className,
+  title,
   ...rest
 } = Astro.props;
 
@@ -38,8 +40,7 @@ const href: string = (() => {
 })();
 
 const transformStyle = {
-  '--base-transform': `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
-  transform: 'var(--base-transform)'
+  '--target-transform': `rotateX(${rotationX}deg) rotateY(${rotationY}deg) rotateZ(${rotationZ}deg) scale(${scale})`,
 };
 
 const containerStyle = {
@@ -50,41 +51,13 @@ const containerStyle = {
 };
 ---
 
-<div style={containerStyle} class:list={["perspective-container", className]} {...rest}>
+<div style={containerStyle} class:list={["perspective-container group/card relative", className]} {...rest}>
   <div class="perspective-card" style={transformStyle}>
     <a href={href} class="perspective-link">
       <slot />
     </a>
   </div>
+  {title && <span class="perspective-title">{title}</span>}
 </div>
 
-<style>
-  @keyframes ps-pulse {
-    0%, 100% { transform: var(--base-transform) translateZ(0) scale(1); opacity: 1; }
-    50% { transform: var(--base-transform) translateZ(12px) scale(1.2); opacity: 1; }
-  }
-  .ps-inner.ps-anim { animation: ps-pulse 900ms ease-in-out infinite; }
-</style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.ps-container').forEach((container) => {
-      const inner = container.querySelector('.ps-inner');
-      if (!inner) return;
-      let stopAfter = false;
-      container.addEventListener('mouseenter', () => {
-        inner.classList.add('ps-anim');
-        stopAfter = false;
-      });
-      container.addEventListener('mouseleave', () => {
-        stopAfter = true;
-      });
-      inner.addEventListener('animationiteration', () => {
-        if (stopAfter) {
-          inner.classList.remove('ps-anim');
-          stopAfter = false;
-        }
-      });
-    });
-  });
-</script>
