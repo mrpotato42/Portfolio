@@ -4,13 +4,14 @@ import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
 import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
 import ProjectsModal from "../components/UI/ProjectsModal.astro";
+import Github from "../components/Icons/Github.astro";
 ---
 
 <Base>
   <main
-    class="flex-1 text-black font-titillium p-1 lg:flex lg:flex-nowrap lg:flex-col lg:m-2 dark:text-dark-text"
+    class="h-dvh overflow-hidden flex flex-col justify-between text-black font-titillium p-4 sm:p-6 lg:p-1 lg:flex-nowrap lg:flex-col lg:m-2 dark:text-dark-text"
   >
-    <divHead class="flex basis-1/4 flex-row my-4 justify-between">
+    <divHead class="flex shrink-0 flex-row my-2 justify-between">
       <div class="flex-col w-full">
         <h2
           class="text-xs sm:text-base md:text-xl lg:text-2xl 3xl:text-3xl 4xl:text-4xl ml-1"
@@ -23,23 +24,28 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
           Daniel Fernando
         </h1>
       </div>
-      <div class="h-1/4 sm:flex sm:flex-row-reverse gap-4">
-        <div class="flex justify-end">
-          <DarkModeButton />
+      <div class="h-full flex flex-col items-end sm:flex-row-reverse sm:items-center gap-4">
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/mrpotato42" target="_blank" aria-label="Visit my Github" class="flex items-center justify-center transition-transform hover:scale-110">
+            <Github class="w-7 h-7 text-black dark:text-white" />
+          </a>
+          <div class="flex justify-end">
+            <DarkModeButton />
+          </div>
         </div>
         <Button
-          title="Download CV"
-          href="/cv/CV Daniel Fernando.pdf"
-          download="CV Daniel Fernando.pdf"
-          class="order-first mt-7 mb-3 sm:mt-0 sm:mb-0 btn-portfolio"
+        title="Download CV"
+        href="/cv/CV Daniel Fernando.pdf"
+        download="CV Daniel Fernando.pdf"
+        class="sm:order-first mt-2 sm:mt-0 btn-portfolio"
         />
       </div>
     </divHead>
     <divBody
-      class="w-full grid grid-cols-6 lg:grid-cols-7 gap-3 3xl:gap-8 lg:gap-12 lg:place-content-center lg:flex-1"
+      class="flex-1 w-full grid grid-cols-6 lg:grid-cols-7 gap-2 content-center 3xl:gap-8 lg:gap-12 lg:place-content-center lg:content-center"
     >
       <div
-        class="max-h-44 min-h-16 pb-1 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col self-center"
+        class="min-h-24 pb-1 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
       >
         <h1
           class="text-xl sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl 4xl:text-6xl font-bold"
@@ -53,7 +59,7 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
         </h1>
       </div>
       <div
-        class="max-h-44 min-h-16 p-2 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl sm:h-3/4 h-2/4 w-full items-center justify-center flex flex-col self-center"
+        class="min-h-24 p-2 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
       >
         <h1
           class="text-xs sm:text-sm md:text-base lg:text-md 3xl:text-lg 4xl:text-xl"
@@ -67,7 +73,7 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
         </h1>
       </div>
       <div
-        class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-4 justify-center dark:p-5 pl-1 max-h-44"
+        class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-4 justify-center dark:p-5 pl-1 min-h-32"
       >
         <p
           class="max-h-44 overflow-auto text-md sm:text-base lg:text-lg 3xl:text-xl 4xl:text-2xl"
@@ -79,21 +85,21 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
         class="flex flex-col justify-center p-5 pl-7 sm:p-10 sm:pl-12 h-full col-start-1 row-start-3 md:col-start-4 lg:col-start-5 md:row-start-1 col-span-full md:row-span-2"
       >
         <div
-          class="grid grid-cols-2 grid-rows-2 gap-4 col-span-2 max-w-[800px] 3xl:gap-8 4xl:gap-12"
+          class="grid grid-cols-2 grid-rows-1 gap-4 col-span-2 max-w-[800px] 3xl:gap-8 4xl:gap-12"
         >
           <PerspectiveShape
             class="aspect-square w-full"
-            rotationX={30}
-            rotationY={-30}
+            rotationX={-30}
+            rotationY={30}
             href="https://www.linkedin.com/in/danielcg99/"
           >
               <img
-                src="images/profile.webp"
+                src="images/1.webp"
                 alt="no terminado"
                 class="w-full h-full object-cover dark:brightness-80"
               />
           </PerspectiveShape>
-
+{/* *
           <PerspectiveShape
             class="aspect-square w-full"
             perspective={250}
@@ -101,21 +107,21 @@ import ProjectsModal from "../components/UI/ProjectsModal.astro";
             href="https://github.com/mrpotato42/Portfolio"
           >
               <img
-                src="images/github.webp"
+                src="images/2.webp"
                 alt="no terminado"
                 class="w-full h-full object-cover dark:brightness-80"
               />
-          </PerspectiveShape>
+          </PerspectiveShape> */}
 
           <ProjectsModal>
             <PerspectiveShape
               class="aspect-square w-full"
-              rotationX={-30}
-              rotationY={30}
+              rotationX={30}
+              rotationY={-30}
               href="modal"
             >
               <img
-                src="images/projects.webp"
+                src="images/3.webp"
                 alt="no terminado"
                 class="w-full h-full object-cover dark:brightness-80"
               />
