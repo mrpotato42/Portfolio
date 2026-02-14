@@ -103,12 +103,33 @@
         transform-style: preserve-3d;
     }
 
-    /* Proyectos - Scroll Infinito */
-    .animate-infinite-scroll {
-        animation: infinite-scroll 40s linear infinite;
+    /* Estilos por defecto (Móvil First < 768px): Scroll manual con Snap */
+    .carousel-container {
+        @apply w-full overflow-x-auto snap-x snap-mandatory;
+        scrollbar-width: none;
+        /* Ocultar barra scroll Firefox */
     }
 
-    .pause {
+    .carousel-container::-webkit-scrollbar {
+        display: none;
+        /* Ocultar barra scroll Chrome/Safari */
+    }
+
+
+    /* Proyectos - Scroll Infinito */
+    @media (min-width: 768px) {
+        .carousel-container {
+            @apply overflow-visible snap-none;
+        }
+
+        .animate-infinite-scroll {
+            animation: infinite-scroll 10s linear infinite;
+        }
+    }
+
+    .pause,
+    .animate-infinite-scroll:hover,
+    .animate-infinite-scroll:focus-within {
         animation-play-state: paused;
     }
 
