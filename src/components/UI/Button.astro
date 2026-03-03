@@ -7,6 +7,7 @@ export interface Props extends HTMLAttributes<"a"> {
   download?: string;
   target?: string;
   class?: string;
+  disabled?: string | boolean;
 }
 
 const {
@@ -14,13 +15,23 @@ const {
   href = "#",
   download: rawDownload,
   target: rawTarget,
+  disabled,
+  class: className,
   ...rest
 } = Astro.props;
 
 const download = rawDownload || null;
 const target = rawTarget || null;
+const isDisabled = disabled === "disabled" || disabled === true;
 ---
 
-<a href={href} download={download} target={target} {...rest}>
+<a 
+  href={isDisabled ? undefined : href} 
+  download={isDisabled ? undefined : download} 
+  target={isDisabled ? undefined : target} 
+  class:list={[className, { "opacity-50 pointer-events-none grayscale cursor-not-allowed": isDisabled }]}
+  aria-disabled={isDisabled}
+  {...rest}
+>
   {title}
 </a>

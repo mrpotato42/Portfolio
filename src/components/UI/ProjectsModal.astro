@@ -18,7 +18,7 @@ const PROJECTS: Project[] = [
     image: 'images/carrousel1.webp',
     description: 'This is my portfolio, where I showcase my work and projects.',
     href: 'https://mrpotato.netlify.app/',
-    state: ''
+    state: 'enabled'
   },
   {
     slug: 'k4pital',
@@ -26,7 +26,7 @@ const PROJECTS: Project[] = [
     image: 'images/carrousel2.webp',
     description: 'AI-powered app to manage your finances',
     href: 'https://k4pital.com/',
-    state: ''
+    state: 'enabled'
   },
   {
     slug: 'Coming Soon',
@@ -131,5 +131,26 @@ const dialogId = `modal-dialog-${Math.random().toString(36).slice(2, 9)}`;
     if (e.target === dialog) {
       dialog.close();
     }
+  });
+
+
+  // Fix: Prevent cards from "sticking" in hover/focus state on desktop after click
+  const cards = dialog?.querySelectorAll('.project-card');
+  cards?.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Only blur if it's a mouse/fine pointer (Desktop)
+      // This preserves the "sticky" tap behavior on Mobile/Tablets
+      if (window.matchMedia('(pointer: fine)').matches) {
+        // If clicking the button itself, don't blur immediately to avoid flickering
+        if (e.target.closest('.btn-portfolio-details')) return;
+        
+        // Use a small timeout to let the click transition finish, then clear focus
+        setTimeout(() => {
+          if (document.activeElement === card) {
+            card.blur();
+          }
+        }, 100);
+      }
+    });
   });
 </script>
