@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Particles from '../components/UI/Particles.astro';
 ---
 
 <html lang="es">
@@ -26,6 +27,9 @@ import "../styles/global.css";
     <body
         class="flex flex-col px-7 py-4 w-full min-h-screen sm:px-14 sm:py-7 3xl:px-32 3xl:py-16 4xl:px-64 4xl:py-24 bg-white dark:bg-dark-background dark:bg-custom dark:bg-cover dark:bg-fixed"
     >
-        <slot />
+        <Particles />
+        <div class="relative z-10 w-full flex flex-col items-center">
+            <slot />
+        </div>
     </body>
 </html>
