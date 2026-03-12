@@ -11,83 +11,80 @@
     --color-dark-foreground: #21232C;
     --color-dark-background: #151618;
 
-    /* Puntos de quiebre para pantallas grandes */
+    /* Puntos de quiebre personalizados (16:9) */
+    --breakpoint-4k: 3840px;
+    /* 4K UHD */
+    --breakpoint-qhd: 2560px;
+    /* QHD / 2K */
+    --breakpoint-fhd: 1920px;
+    /* Full HD */
+    --breakpoint-hdplus: 1600px;
+    /* HD+ */
+    --breakpoint-hdready: 1366px;
+    /* HD Ready */
+    --breakpoint-hd: 1280px;
+    /* HD 720p */
+    --breakpoint-fwvga: 854px;
+    /* FWVGA */
+    --breakpoint-nhd: 640px;
+    /* nHD */
+    --breakpoint-qqvgawide: 426px;
+    /* QQVGA wide */
+
+    /* Puntos de quiebre personalizados (4:3) */
+    --breakpoint-qxga: 2048px;
+    /* QXGA */
+    --breakpoint-uxga: 1600px;
+    /* UXGA */
+    --breakpoint-sxga: 1280px;
+    /* SXGA− */
+    --breakpoint-xga: 1024px;
+    /* XGA */
+    --breakpoint-svga: 800px;
+    /* SVGA */
+    --breakpoint-vga: 640px;
+    /* VGA */
+    --breakpoint-qvga: 320px;
+    /* QVGA */
+    --breakpoint-qqvga: 160px;
+    /* QQVGA */
+
+    /* Puntos de quiebre originales */
     --breakpoint-3xl: 1600px;
     --breakpoint-4xl: 1920px;
 }
 
 /* ========================================
-   PERSPECTIVE SHAPE CARD
-   Componente de tarjeta con efecto 3D
-   para redirecciones del portafolio
+   Botón general del portafolio
    ======================================== */
 @layer components {
 
-    /* Contenedor exterior - maneja perspectiva y hover */
-    .perspective-container {
-        @apply flex justify-center items-center;
-        @apply max-w-full max-h-full;
-        @apply transition-transform duration-[350ms] ease-out;
-        @apply hover:scale-[1.30] hover:z-50;
-    }
-
-    /* Tarjeta interior - contenido y estilos visuales */
-    .perspective-card {
-        @apply max-w-full max-h-full;
-        @apply rounded-lg overflow-hidden;
-        @apply shadow-xl;
-        @apply transition-transform duration-700 ease-in-out;
-        transform: scale(1);
-    }
-
-    .dark .perspective-card {
-        transform: var(--target-transform);
-    }
-
-    /* Reset transform on hover in dark mode to show flat card */
-    .dark .perspective-container:hover .perspective-card {
-        transform: scale(1);
-    }
-
-    /* Enlace dentro de la tarjeta */
-    .perspective-link {
-        @apply block w-full h-full;
-    }
-
-    .btn-portfolio-details {
-        @apply btn btn-sm sm:btn-sm;
-        @apply flex-row w-24 sm:w-fit text-xs/3 sm:text-sm;
-        @apply border rounded-2xl border-black bg-transparent text-black;
-        @apply transition-all duration-300 hover:scale-110 hover:bg-indigo-600 hover:text-white;
-
-        /* Dark Mode overrides */
-        @apply dark:border-white dark:bg-indigo-300 dark:text-black;
-        @apply dark:hover:bg-indigo-600 dark:hover:text-white;
-    }
-
-    /* Botón general del portafolio */
+    /* Botón general del portafolio - Estilo label indigo */
     .btn-portfolio {
-        @apply btn btn-sm sm:btn-sm;
-        @apply flex-row w-24 sm:w-fit text-xs/3 sm:text-sm;
-        @apply border border-black bg-transparent text-black;
-        @apply transition-all duration-300 hover:scale-110 hover:bg-indigo-600 hover:text-white;
+        @apply inline-flex items-center gap-2;
+        @apply px-4 py-2 rounded;
+        @apply text-[10px] font-mono text-center uppercase tracking-[0.2em] font-bold;
+        @apply transition-all duration-300 ease-out;
+        @apply bg-indigo-500/60;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+    }
 
-        /* Dark Mode overrides */
-        @apply dark:border-white dark:bg-indigo-300 dark:text-black;
+    .btn-portfolio::after {
+        @apply text-xs transition-transform duration-300;
+    }
+
+    .btn-portfolio:hover {
+        @apply hover:scale-110 hover:bg-indigo-200;
         @apply dark:hover:bg-indigo-600 dark:hover:text-white;
+        border-color: rgba(99, 102, 241, 0.5);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+        @apply scale-110;
     }
 
-    /* Título de la tarjeta perspectiva */
-    .perspective-title {
-        @apply absolute -bottom-10 left-0 right-0 flex justify-center;
-        @apply text-xl font-bold text-black dark:text-white;
-        @apply opacity-100 pointer-events-none;
-        @apply lg:opacity-0 lg:transition-opacity lg:duration-300;
+    .btn-portfolio:hover::after {
+        @apply translate-y-0.5;
     }
 
-    .group\/card:hover .perspective-title {
-        @apply lg:opacity-100;
-    }
 }
 
 /* ========================================
@@ -95,82 +92,34 @@
    ======================================== */
 @layer utilities {
 
-    /* --- Estilos Base (Mobile First) --- */
-
-
-    /* Preservar transformaciones 3D */
-    .preserve-3d {
-        transform-style: preserve-3d;
-    }
-
-    /* Estilos por defecto (Móvil First < 768px): Scroll manual con Snap */
-    .carousel-container {
-        @apply w-full overflow-x-auto snap-x snap-mandatory;
-        scrollbar-width: none;
-        /* Ocultar barra scroll Firefox */
-    }
-
-    .carousel-container::-webkit-scrollbar {
+    /* --- Roadmap Component Utilities --- */
+    .roadmap-scroll-container::-webkit-scrollbar {
         display: none;
-        /* Ocultar barra scroll Chrome/Safari */
     }
 
-
-    /* Proyectos - Scroll Infinito */
-    @media (min-width: 768px) {
-        .carousel-container {
-            @apply overflow-visible snap-none;
-        }
-
-        .animate-infinite-scroll {
-            animation: infinite-scroll 10s linear infinite;
-        }
+    .roadmap-scroll-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
-    .pause,
-    .animate-infinite-scroll:hover,
-    .animate-infinite-scroll:focus-within {
-        animation-play-state: paused;
-    }
-
-    @keyframes infinite-scroll {
-        from {
-            transform: translateX(0);
+    /* Snap solo para dispositivos táctiles (touch/touchpad) */
+    @media (pointer: coarse) {
+        .roadmap-scroll-container {
+            scroll-snap-type: x mandatory;
+            scroll-padding-left: 20%;
+            scroll-behavior: smooth;
         }
 
-        to {
-            transform: translateX(calc(-50% - 12px));
-            /* -50% because we duplicated the items, -12px to account for half the gap */
+        .roadmap-item {
+            scroll-snap-align: start;
         }
     }
 
-    .project-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Modal - Fast close transition only */
-    dialog.modal {
-        opacity: 0;
-        transition: opacity 50ms ease-out, display 150ms ease-out allow-discrete, overlay 150ms ease-out allow-discrete;
-    }
-
-    dialog.modal[open] {
-        opacity: 1;
-        transition: none;
-        /* Opening is instant */
-    }
-
-    dialog.modal::backdrop {
-        background: rgba(0, 0, 0, 0.7);
-        opacity: 0;
-        transition: opacity 150ms ease-out, display 150ms ease-out allow-discrete, overlay 150ms ease-out allow-discrete;
-    }
-
-    dialog.modal[open]::backdrop {
-        opacity: 1;
-        transition: none;
-        /* Opening is instant */
+    /* Punto cuando se activa por scroll */
+    .roadmap-dot.active {
+        background-color: #818cf8;
+        /* indigo-400 */
+        box-shadow: 0 0 15px #6366f1;
+        transform: scale(1.2);
     }
 }

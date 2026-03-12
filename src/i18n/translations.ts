@@ -1,0 +1,47 @@
+export const translations = {
+  en: {
+    greeting: "Hey, I'm",
+    downloadCv: "CV",
+    cvLink: "/cv/CV ENG Daniel Fernando.pdf",
+    cvName: "CV ENG Daniel Fernando.pdf",
+    yearsExp: "years of experience",
+    from: "From",
+    bio: "Information systems technologist focused on software development and IT support, with skills in problem solving and analysis of complex systems. Proactive, responsible and committed. Recognized for the ability to adapt to different work environments, continuous learning and teamwork. I seek to continue growing in dynamic environments that allow me to take on new challenges, strengthen my skills and expand my knowledge.",
+    professionalWork: "Professional Work",
+    socialMedia: "Social media",
+    portfolio: "Portfolio",
+    k4pital: "K4PITAL",
+    dolce: "Dolce Amore Mio",
+    linkedin: "Linkedin",
+    github: "Github",
+    portfolioDesc: "My portfolio, showcase my work.",
+    k4pitalDesc: "AI-powered app to manage your finances",
+    dolceDesc: "Coming soon...",
+    linkedinDesc: "Here you can find more info about me",
+    githubDesc: "Here you can find more info about me",
+  },
+  es: {
+    greeting: "Hola, soy",
+    downloadCv: "CV",
+    cvLink: "/cv/CV ESP Daniel Fernando.pdf",
+    cvName: "CV ESP Daniel Fernando.pdf",
+    yearsExp: "años de experiencia",
+    from: "De",
+    bio: "Tecnólogo en sistemas de información enfocado en el desarrollo de software y soporte de TI, con habilidades en resolución de problemas y análisis de sistemas complejos. Proactivo, responsable y comprometido. Reconocido por la capacidad de adaptarse a diferentes entornos laborales, aprendizaje continuo y trabajo en equipo. Busco seguir creciendo en entornos dinámicos que me permitan asumir nuevos retos, fortalecer mis competencias y ampliar mis conocimientos.",
+    professionalWork: "Trabajo Profesional",
+    socialMedia: "Redes Sociales",
+    portfolio: "Portafolio",
+    k4pital: "K4PITAL",
+    dolce: "Dolce Amore Mio",
+    linkedin: "Linkedin",
+    github: "Github",
+    portfolioDesc: "Mi portafolio, muestra mi trabajo.",
+    k4pitalDesc: "App con IA para gestionar tus finanzas",
+    dolceDesc: "Próximamente...",
+    linkedinDesc: "Aquí puedes encontrar más información sobre mí",
+    githubDesc: "Aquí puedes encontrar más información sobre mí",
+  }
+} as const;
+
+export type Language = keyof typeof translations;
+export type TranslationKey = keyof typeof translations['en'];

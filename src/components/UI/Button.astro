@@ -8,6 +8,7 @@ export interface Props extends HTMLAttributes<"a"> {
   target?: string;
   class?: string;
   disabled?: string | boolean;
+  "data-i18n"?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   target: rawTarget,
   disabled,
   class: className,
+  "data-i18n": dataI18n,
   ...rest
 } = Astro.props;
 
@@ -33,5 +35,6 @@ const isDisabled = disabled === "disabled" || disabled === true;
   aria-disabled={isDisabled}
   {...rest}
 >
-  {title}
+  <slot />
+  {dataI18n ? <span data-i18n={dataI18n}>{title}</span> : <span>{title}</span>}
 </a>

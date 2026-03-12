@@ -2,9 +2,68 @@
 import Base from "../layouts/Base.astro";
 import DarkModeButton from "../components/UI/DarkModeButton.astro";
 import Button from "../components/UI/Button.astro";
-import PerspectiveShape from "../components/UI/PerspectiveShape.astro";
-import ProjectsModal from "../components/UI/ProjectsModal.astro";
-import Github from "../components/Icons/Github.astro";
+import LanguageToggle from "../components/UI/LanguageToggle.astro";
+import Roadmap from "../components/UI/Roadmap.astro"; // Importamos
+import DownloadIcon from "../components/Icons/Download.astro";
+import { translations } from "../i18n/translations";
+
+const t = translations.en;
+
+const PROJECTS = [
+  {
+    date: '2021',
+    i18nTitleKey: 'portfolio',
+    i18nDescKey: 'portfolioDesc',
+    image: 'images/carrousel1.webp',
+    href: 'https://mrpotato.netlify.app/',
+    state: 'enabled'
+  },
+  {
+    date: '2024-2025',
+    i18nTitleKey: 'k4pital',
+    i18nDescKey: 'k4pitalDesc',
+    image: 'images/carrousel2.webp',
+    href: 'https://k4pital.com/',
+    state: 'enabled'
+  },
+  {
+    date: '2025-2026',
+    i18nTitleKey: 'dolce',
+    i18nDescKey: 'dolceDesc',
+    image: 'images/carrousel3.webp',
+    href: '#',
+    state: 'disabled'
+  },
+  {
+    date: '',
+    i18nTitleKey: 'linkedin',
+    i18nDescKey: 'linkedinDesc',
+    image: 'images/carrousel4.webp',
+    href: 'https://www.linkedin.com/in/danielcg99',
+    state: 'enabled'
+  },
+  {
+    date: '',
+    i18nTitleKey: 'github',
+    i18nDescKey: 'githubDesc',
+    image: 'images/carrousel4.webp',
+    href: 'https://github.com/mrpotato42',
+    state: 'enabled'
+  }
+];
+
+const SECTIONS = [
+  {
+
+    i18nKey: "professionalWork",
+    projects: PROJECTS.slice(0, 3)
+  },
+  {
+
+    i18nKey: "socialMedia",
+    projects: PROJECTS.slice(3, 5)
+  }
+];
 ---
 
 <Base>
@@ -15,8 +74,9 @@ import Github from "../components/Icons/Github.astro";
       <div class="flex-col w-full">
         <h2
           class="text-xs sm:text-base md:text-xl lg:text-2xl 3xl:text-3xl 4xl:text-4xl ml-1"
+          data-i18n="greeting"
         >
-          Hey, I'm
+          {t.greeting}
         </h2>
         <h1
           class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 3xl:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-40% via-primary via-60% to-green-600 dark:bg-gradient-to-br dark:from-green-600 dark:from-40% dark:via-primary dark:via-80% dark:to-indigo-600"
@@ -24,112 +84,75 @@ import Github from "../components/Icons/Github.astro";
           Daniel Fernando
         </h1>
       </div>
-      <div class="h-full flex flex-col items-end sm:flex-row-reverse sm:items-center gap-4">
-        <div class="flex items-center gap-4">
-          <a href="https://github.com/mrpotato42" target="_blank" aria-label="Visit my Github" class="flex items-center justify-center transition-transform hover:scale-110">
-            <Github class="w-7 h-7 text-black dark:text-white" />
-          </a>
-          <div class="flex justify-end">
+      <div class="h-full flex flex-col items-end sm:flex-row sm:items-center gap-4">
+        <div class="flex items-center">
+          <div class="flex justify-end gap-2">
+            <LanguageToggle />
             <DarkModeButton />
           </div>
         </div>
         <Button
-        title="Download CV"
-        href="/cv/CV Daniel Fernando.pdf"
-        download="CV Daniel Fernando.pdf"
-        class="sm:order-first mt-2 sm:mt-0 btn-portfolio"
-        />
+        id="cv-download-btn"
+        title={t.downloadCv}
+        data-i18n="downloadCv"
+        href={t.cvLink}
+        download={t.cvName}
+        class="sm:order-first mt-0 sm:mt-0 btn-portfolio"
+        >
+          <DownloadIcon class="w-4 h-4" />
+        </Button>
       </div>
     </divHead>
     <divBody
-      class="flex-1 w-full grid grid-cols-6 lg:grid-cols-7 gap-6 content-center 3xl:gap-8 lg:gap-12 lg:place-content-center lg:content-center"
+      class="flex-1 w-full lg:w-[70%] xl:w-[65%] fhd:w-[60%] lg:mx-auto flex flex-col gap-4 lg:gap-6 fhd:gap-8 justify-center my-auto lg:mt-4 fhd:mt-8"
     >
-      <div
-        class="min-h-24 pb-1 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
-      >
-        <h1
-          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl 4xl:text-6xl font-bold"
-        >
-          +2
-        </h1>
-        <h1
-          class="text-xs sm:text-sm md:text-base lg:text-md 3xl:text-lg 4xl:text-xl px-2"
-        >
-          years of experience
-        </h1>
-      </div>
-      <div
-        class="min-h-24 p-2 col-span-3 lg:row-span-1 lg:col-span-2 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col self-center"
-      >
-        <h1
-          class="text-xs sm:text-sm md:text-base lg:text-md 3xl:text-lg 4xl:text-xl"
-        >
-          From
-        </h1>
-        <h1
-          class="text-lg sm:text-xl md:text-2xl lg:text-3xl 3xl:text-4xl 4xl:text-5xl font-bold"
-        >
-          Colombia
-        </h1>
-      </div>
-      <div
-        class="col-span-6 lg:row-span-1 lg:col-span-4 lg:mt-0 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-4 justify-center dark:p-5 pl-1 min-h-32"
-      >
-        <p
-          class="max-h-44 overflow-auto text-md sm:text-base lg:text-lg 3xl:text-xl 4xl:text-2xl"
-        >
-          Information systems technologist focused on software development and IT support, with skills in problem solving and analysis of complex systems. Proactive, responsible, and committed. Recognized for the ability to adapt to different work environments, continuous learning, and teamwork. More than 2 years of experience in the field.
-        </p>
-      </div>
-      <div
-        class="flex flex-col justify-center p-5 pl-7 sm:p-10 sm:pl-12 h-full col-start-1 row-start-3 md:col-start-4 lg:col-start-5 md:row-start-1 col-span-full md:row-span-2"
-      >
+      <div class="grid grid-cols-2 gap-4 hdplus:gap-6 items-stretch">
         <div
-          class="grid grid-cols-2 grid-rows-1 gap-4 col-span-2 max-w-[800px] 3xl:gap-8 4xl:gap-12"
+          class="min-h-20 pb-1 col-span-1 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col "
         >
-          <PerspectiveShape
-            class="aspect-square w-full"
-            rotationX={-30}
-            rotationY={30}
-            href="https://www.linkedin.com/in/danielcg99/"
-            title="LinkedIn"
+          <h1
+            class="text-xl sm:text-2xl md:text-3xl lg:text-3xl hdplus:text-4xl fhd:text-6xl font-bold"
           >
-              <img
-                src="images/1.webp"
-                alt="no terminado"
-                class="w-full h-full object-cover dark:brightness-80"
-              />
-          </PerspectiveShape>
-{/* *
-          <PerspectiveShape
-            class="aspect-square w-full"
-            perspective={250}
-            rotationY={-35}
-            href="https://github.com/mrpotato42/Portfolio"
+            +2
+          </h1>
+          <h1
+            class="text-xs sm:text-sm md:text-base lg:text-sm hdplus:text-base fhd:text-xl px-2"
+            data-i18n="yearsExp"
           >
-              <img
-                src="images/2.webp"
-                alt="no terminado"
-                class="w-full h-full object-cover dark:brightness-80"
-              />
-          </PerspectiveShape> */}
-
-          <ProjectsModal>
-            <PerspectiveShape
-              class="aspect-square w-full"
-              rotationX={30}
-              rotationY={-30}
-              href="modal"
-              title="Experience"
-            >
-              <img
-                src="images/3.webp"
-                alt="no terminado"
-                class="w-full h-full object-cover dark:brightness-80"
-              />
-            </PerspectiveShape>
-          </ProjectsModal>
+            {t.yearsExp}
+          </h1>
         </div>
+        
+        <div
+          class="min-h-20 p-2 col-span-1 text-center dark:bg-dark-foreground/85 rounded-2xl h-full w-full items-center justify-center flex flex-col py-4 fhd:py-6"
+        >
+          <h1
+            class="text-xs sm:text-sm md:text-base lg:text-sm hdplus:text-base fhd:text-xl"
+            data-i18n="from"
+          >
+            {t.from}
+          </h1>
+          <h1
+            class="text-lg sm:text-xl md:text-2xl lg:text-2xl hdplus:text-3xl fhd:text-5xl font-bold"
+          >
+            Colombia
+          </h1>
+        </div>
+
+        <div
+          class="col-span-2 dark:bg-dark-foreground/85 rounded-2xl h-auto flex flex-col gap-2 hdplus:gap-4 justify-center dark:p-4 fhd:p-5 px-4 min-h-24 fhd:min-h-32"
+        >
+          <p
+            class="max-h-32 hdplus:max-h-40 fhd:max-h-44 overflow-auto text-sm sm:text-base lg:text-base hdplus:text-lg fhd:text-2xl leading-relaxed text-justify"
+            data-i18n="bio"
+          >
+            {t.bio}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-1 min-h-0 w-full flex flex-col justify-center overflow-hidden" style="border-radius: 1rem;">
+        <Roadmap sections={SECTIONS}/>
       </div>
     </divBody>
   </main>

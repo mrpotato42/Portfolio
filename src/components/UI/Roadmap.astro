@@ -1,0 +1,104 @@
+---
+interface Project {
+  date: string; 
+  image: string; 
+  href: string; 
+  state: string; 
+  i18nTitleKey?: string; 
+  i18nDescKey?: string;
+}
+
+interface Section {
+  i18nKey?: string;
+  projects: Project[];
+}
+
+interface Props {
+  sections: Section[];
+}
+
+const { sections } = Astro.props;
+---
+
+<div class="w-full h-full flex flex-col justify-center dark:bg-dark-foreground/60 backdrop-blur-md rounded-2xl p-4 sm:p-5 lg:p-6 border border-white/5 relative shadow-2xl overflow-hidden">
+  
+  <!-- LINEA (Pipeline Central) -->
+  <div class="absolute left-1/2 top-4 bottom-4 w-[2px] bg-indigo-300/40 dark:bg-indigo-400/50 shadow-[0_0_10px_rgba(99,102,241,0.2)] dark:shadow-[0_0_10px_rgba(99,102,241,0.9)] z-10 hidden md:block"></div>
+
+  <!-- CONTENEDOR GRID DE LAS SECCIONES -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-4 lg:gap-6 relative z-0">
+    
+    {sections.map((section, sIndex) => (
+      <div class="roadmap-section-group flex flex-col h-full">
+        
+        <!-- Separador visual entre secciones en mobile -->
+        {sIndex > 0 && (
+          <div class="md:hidden w-3/4 mx-auto h-[2px] bg-indigo-300/40 dark:bg-indigo-400/50 shadow-[0_0_10px_rgba(99,102,241,0.2)] dark:shadow-[0_0_10px_rgba(99,102,241,0.9)] mb-6"></div>
+        )}
+
+        <!-- TEXTO DE ARRIBA (Etiqueta rectangular) -->
+        <div class="mb-2 lg:mb-3 flex justify-center">
+          <span 
+            class="bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-3 py-1 rounded text-[10px] font-mono uppercase tracking-[0.2em] text-black/90 dark:text-indigo-100 font-bold"
+            data-i18n={section.i18nKey}
+          >
+            {section.i18nKey}
+          </span>
+        </div>
+
+        <!-- CONTENEDOR DEL ROADMAP -->
+        <div class="relative roadmap-wrapper">
+
+          <!-- Scroll Horizontal Independiente con Masking (Fades laterales elegantes y transparentes) -->
+          <div 
+            class="relative roadmap-scroll-container overflow-x-auto pt-4 pb-4 cursor-grab active:cursor-grabbing [&::-webkit-scrollbar]:hidden" 
+            id={`container-${sIndex}`}
+            style="scrollbar-width: none; mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);"
+          >
+            <div class="flex w-max relative items-start gap-6 sm:gap-8 lg:gap-10 pl-[25%] pr-28">
+              
+              <!-- LINEA MORADA (Fondo) -->
+              <div class="absolute top-[7px] left-0 w-full h-[2px] bg-indigo-200 dark:bg-indigo-600/40"></div>
+              
+              <!-- LINEA MORADA ACTIVA (Progreso) -->
+              <div 
+                id={`progress-${sIndex}`} 
+                class="progress-line absolute top-[7px] left-0 h-[2px] bg-indigo-500 shadow-[0_0_10px_#6366f1] transition-none z-10"
+                style="width: 0%;"
+              ></div>
+
+              {section.projects.map((project) => (
+                <div class={`relative flex flex-col shrink-0 w-[140px] sm:w-[160px] lg:w-[180px] xl:w-[200px] roadmap-item transition-all ${project.state === 'disabled' ? 'opacity-40 grayscale' : ''}`}>
+                  
+                  <!-- PUNTO MORADO (Nodo) -->
+                  <div class="w-4 h-4 rounded-full bg-indigo-500 dark:bg-indigo-600 border-2 border-indigo-300 dark:border-indigo-400 z-20 roadmap-dot shadow-sm"></div>
+                  
+                  <!-- TEXTO INFERIOR (Líneas negras en tu dibujo) -->
+                  <div class="mt-2 lg:mt-3 pr-4">
+                    <a href={project.state === 'enabled' ? project.href : '#'} target="_blank" class="block group">
+                      <span class="text-[9px] font-mono uppercase text-gray-500 dark:text-gray-400 mb-1 block tracking-widest group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{project.date}</span>
+                      <h4 
+                        class="text-sm lg:text-base font-bold text-gray-900 dark:text-white leading-tight"
+                        data-i18n={project.i18nTitleKey}
+                      >
+                        {project.i18nTitleKey}
+                      </h4>
+                      <p 
+                        class="text-[10px] lg:text-[11px] text-black dark:text-gray-400 mt-1 leading-relaxed font-light line-clamp-2"
+                        data-i18n={project.i18nDescKey}
+                      >
+                        {project.i18nDescKey}
+                      </p>
+                    </a>                  
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script src="../../scripts/roadmap.ts"></script>
